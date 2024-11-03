@@ -5,9 +5,8 @@ body{
     
 }
 
-
 a {
- link-color: #52FFB8
+    color: #52FFB8
 }
 
 h1, h2{ 
@@ -16,12 +15,12 @@ h1, h2{
 
 nav {
     background-color:#4DFFF3;
+    color:black;
     padding: 10px;
     margin-bottom: 30px
 }
-
 nav a { 
-    color:#000000
+    color:black
 }
 
 nav a:hover {

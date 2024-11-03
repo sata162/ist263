@@ -2,122 +2,118 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Contact Lab5</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        @media only screen and (max-width: 600px) {
-            nav a {
-                max-width: 100%;
-                display: block;
-            }
-        }
+        @media only screen and (max-width:600px) { nav a {max-width: 100%;} {display: block;}}
+        .span {display:none}
+        
 
-        .span {
-            display: none;
-        }
+        
 
-        .row1, .row2 {
-            display: flex;
-        }
 
-        .row2 {
-            flex-wrap: wrap;
-        }
+        .row1, .row2 {display:flex;}
+        .row2 {flex-wrap: wrap;}
 
         .row1 div, .row2 div {
-            background-color: violet;
-            margin: 10px;
-            padding: 20px;
+            background-color:violet; 
+            margin: 10px; 
+            padding:20px; 
             border-radius: 10px;
-            flex: 1;
-        }
+            flex:1}
 
-        body {
-            background-color: #503D3F;
-            color: antiquewhite;
-        }
+        body{
+    background-color: #503D3F;
+    color: antiquewhite;
+    
+}
 
-        a {
-            color: #52FFB8;
-        }
 
-        h1, h2 {
-            color: #539987;
-        }
+a {
+    color: #52FFB8
+}
 
-        nav {
-            background-color: #4DFFF3;
-            color: black;
-            padding: 10px;
-            margin-bottom: 30px;
-        }
+h1, h2{ 
+    color:#539987
+}
 
-        nav a {
-            color: black;
-        }
+nav {
+    background-color:#4DFFF3;
+    color:black;
+    padding: 10px;
+    margin-bottom: 30px
+}
+nav a { 
+    color:black
+}
 
-        nav a:hover {
-            background-color: #E9E3E6;
-        }
-    </style>
+nav a:hover {
+background-color:#E9E3E6
+}
+</style>
 </head>
+
+
 <body>
-    <nav>
-        <a href="index.html">Home</a><span>|</span>
-        <a href="skills.html">Skills</a><span>|</span>
-        <a href="contact.html">Contact</a>
-    </nav>
+    <nav>        
 
-    <h1>Contact</h1>
+        <a href="index.html"> Home</a><span>|</span><a href= "skills.html"> Skills</a> <span>|</span> <a href="contact.html">Contact</a>
+        
+      </nav>
+    <h1> Contact. </h1>
 
-    <div class="row1">
+    <div class="row1">   
         <div>
-            <p>Syracuse University</p>
-            <p>900 S Crouse</p>
-            <p>Syracuse, NY, 13244</p>
+            <p> Syracuse University </p>
+            <p> 900 S Crouse </p>
+            <p> Syracuse,NY,13244 </p>
         </div>
 
-        <div>
-            <h2>LinkedIn</h2>
-            <a href="mailto:acdiarra@syr.edu">Sata Diarra Email</a><br>
-            <a href="https://www.linkedin.com/in/sata-diarra">My LinkedIn profile</a><br>
-            <h2>Email</h2>
-            <img src="../images/logo3.png" alt="LinkedIn Logo">
-        </div>
-    </div>
-
-    <div class="row2">
-        <div>
-            <p>Choose Your Gender:</p>
-            <form action="https://formspree.io/f/xdknrapy" method="POST">
-                <label for="fname">First name:</label><br>
-                <input type="text" id="fname" name="fname" value="John"><br>
-
-                <label for="lname">Last name:</label><br>
-                <input type="text" id="lname" name="lname" value="Doe"><br>
-
-                <input type="radio" id="Male1" name="Gender" value="Male">
-                <label for="Male1">Male</label><br>
-
-                <input type="radio" id="Female" name="Gender" value="Female">
-                <label for="Female">Female</label><br>
-
-                <input type="radio" id="None" name="Gender" value="None">
-                <label for="None">None</label><br>
-
-                <label for="Business">Business Inquiry:</label><br>
-                <textarea id="Business" name="Business" rows="3" cols="60"></textarea><br>
-
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-
-        <div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5832.264009878755!2d-76.13856310850471!3d43.03865401755085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d9f39fba2ccc55%3A0x5e6089065251084d!2sSyracuse%20University!5e0!3m2!1sen!2sus!4v1726179331301!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div> 
+            <h2> LinkedIn</h2>
+            <a href="mailto:acdiarra@syr.edu"> Sata Diarra Email</a>
+            <a href="https://www.linkedin.com/in/sata-diarra" > My LinkedIN profile   </a>
+            <a href="https://www.linkedin.com/in/sata-diarra">  
+            <h2> Email </h2>
+                <img src="../images/logo3.png" alt="LinkedIn Logo">   
         </div>
     </div>
 
-    <hr>
+         <div class="row2" >   
+            <div>
+                    <p> Choose Your Gender: </p>
+
+                    <form action="https://formspree.io/f/xdknrapy" method= "POST">
+                
+                        <label for="fname">First name:</label><br>
+                        <input type="text" id="fname" name="fname" value="John"><br>
+                    
+                        <label for="lname">Last name:</label><br>
+                        <input type="text" id="lname" name="lname" value="Doe"><br>
+                            
+                        <input type="radio" id="Male1" name="Gender" value="Male">
+                        <label for="Male1">Male</label><br>
+                    
+                        <input type="radio" id="Female" name="Gender" value="Female">
+                        <label for="Female">Female</label><br>
+                    
+                        <input type="radio" id="None" name="Gender" value="None">
+                        <label for="None">None</label><br>
+                    
+                    
+                        <label for="Business"> Business Inquiry</label><br>
+                        <textarea id="Business" name="Business" rows= "3" cols= "60"></textarea><br>
+                    
+                        <input type="submit" value="Submit">
+                    
+                    </form>
+                </div>
+                <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5832.264009878755!2d-76.13856310850471!3d43.03865401755085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d9f39fba2ccc55%3A0x5e6089065251084d!2sSyracuse%20University!5e0!3m2!1sen!2sus!4v1726179331301!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                </div>
+    </div>
+ <hr>
 </body>
 </html>
