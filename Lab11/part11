@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diarra's PARTICIPATION 11</title>
+</head>
+<body>
+
+<a href="#" onclink="SecondBlock()">Click for a message</a>
+
+<script>
+function SecondBlock() {
+    alert("My first JavaScript program");
+}
+</script>
+
+</body>
+</html>
