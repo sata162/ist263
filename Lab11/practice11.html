@@ -10,12 +10,12 @@
 
 
 <style>
-.comtainer{
-    display:flex;
-}
-#first {order: 1;}
-#second {order: 2;}
-#third {order: 3;}
+    .comtainer{
+        display:flex;
+    }
+    #first {order: 1;}
+    #second {order: 2;}
+    #third {order: 3;}
 
 </style>
 
@@ -24,20 +24,23 @@
     function WinnerMessage () { 
         
     document.getElementByID('messages').innerHTML = 'You Won!';
-  }
+    }
     function TryAgain () { 
         document.getElementByID('messages').innerHTML = 'Wrong - Shell TryAgain!';
     }
+    function ShuffleShells() {
+    document.getElementById("first").style.order =  Math.Floor((Math.random() * 3)+ 2);
+}
   </script>
 
   </head>
 
-<body>
+<body onload="ShuffleShells();">
     <h1>Choose a Walnut</h1>
 <div class=" container"> 
     <img src="https://laferger.github.io/ist263/images/walnut.png"
      alt="first walnut" id="first" onclick="WinnerMessage();">
-    <img src="https://laferger.gsecondithub.io/ist263/images/walnut.png"
+    <img src="https://laferger.github.io/ist263/images/walnut.png"
      alt="second walnut" id="second" onclick="TryAgain();">
     <img src="https://laferger.github.io/ist263/images/walnut.png" 
     alt="third walnut" id="third" onclick="TryAgain();">
