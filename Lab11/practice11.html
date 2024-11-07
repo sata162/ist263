@@ -16,60 +16,8 @@
     #first {order: 1;}
     #second {order: 2;}
     #third {order: 3;}
-    .first {
-    position: relative;
-    animation-name: first;
-    animation-duration: 2s;
-    animation-direction: reverse;
-    animation-iteration-count: 3;
-}
-@keyframes first {
-    0%   {left:0px; top:0px;}
-    33%  {left:200px; top:0px;}
-    67%  {left:200px; top:200px;}
-    100%  {left:0px; top:200px;}
-}
-.second {
-    position: relative;
-    animation-name: second;
-    animation-duration: 2s;
-    animation-direction: reverse;
-    animation-iteration-count: 3;
-}
-@keyframes second {
-    0%   {left:0px; top:0px;}
-    33%  {left:0px; top:200px;}
-    67%  {left:200px; top:200px;}
-    100%  {left:200px; top:0px;}
-}
-
-.third {
-    position: relative;
-    animation-name: third;
-    animation-duration: 2s;
-    animation-direction: reverse;
-    animation-iteration-count: 3;
-}
-@keyframes third {
-    0%   {left:0px; top:0px;}
-    33%  {left: -200px; top:0px;}
-    67%  {left: -200px; top:200px;}
-    100%  {left: 0px; top:200px;}
-}
 </style>
-
-<script>
-  
-    function WinnerMessage () { 
-        
-    document.getElementByID('messages').innerHTML = 'You Won!';
-    }
-    function TryAgain () { 
-        document.getElementByID('messages').innerHTML = 'Wrong - Shell TryAgain!';
-    }
-    function ShuffleShells() {
-    document.getElementById("first").style.order =  Math.Floor((Math.random() * 3)+ 2);
-}
+       
   </script>
 
   </head>
@@ -78,11 +26,11 @@
     <h1>Choose a Walnut</h1>
 <div class=" container"> 
     <img src="https://laferger.github.io/ist263/images/walnut.png"
-     alt="first walnut" id="first" onclick="WinnerMessage();">
+     alt="first walnut" id="first" class=" first" onclick="WinnerMessage();">
     <img src="https://laferger.github.io/ist263/images/walnut.png"
-     alt="second walnut" id="second" onclick="TryAgain();">
+     alt="second walnut" id="second" class=" second" onclick="TryAgain();">
     <img src="https://laferger.github.io/ist263/images/walnut.png" 
-    alt="third walnut" id="third" onclick="TryAgain();">
+    alt="third walnut" id="third" class="third" onclick="TryAgain();">
 </div>
     <div id= "messages"> </div>
 
