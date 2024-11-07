@@ -6,7 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 11</title>
     <link rel="stylesheet" href="https://laferger.github.io/ist263/images/animate.css">
-</head>
+
+
+
+<style>
+.comtainer{
+    display:flex;
+}
+#first {order: 1;}
+#second {order: 2;}
+#third {order: 3;}
+
+</style>
+
 <script>
   
     function WinnerMessage () { 
@@ -18,15 +30,18 @@
     }
   </script>
 
+  </head>
+
 <body>
     <h1>Choose a Walnut</h1>
+<div class=" container"> 
     <img src="https://laferger.github.io/ist263/images/walnut.png"
-     alt="first walnut" class="first" onclick="WinnerMessage();">
-    <img src="https://laferger.github.io/ist263/images/walnut.png"
-     alt="second walnut" class="second" onclick="TryAgain();">
+     alt="first walnut" id="first" onclick="WinnerMessage();">
+    <img src="https://laferger.gsecondithub.io/ist263/images/walnut.png"
+     alt="second walnut" id="" onclick="TryAgain();">
     <img src="https://laferger.github.io/ist263/images/walnut.png" 
-    alt="third walnut" class="third" onclick="TryAgain();">
-
+    alt="third walnut" id="third" onclick="TryAgain();">
+</div>
     <div id= "messages"> </div>
 
     
