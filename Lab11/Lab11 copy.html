@@ -6,14 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 11</title>
     <link rel="stylesheet" href="https://laferger.github.io/ist263/images/animate.css">
+
     <style>
         .container {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
         }
+
+        /* Setting initial order */
         #first { order: 1; }
         #second { order: 2; }
         #third { order: 3; }
+
+        /* Add shuffling animation */
+        .shuffle {
+            animation: shuffleAnimation 0.5s ease-in-out;
+        }
+
+        @keyframes shuffleAnimation {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(20px);
+            }
+        }
     </style>
 </head>
 
@@ -23,39 +42,4 @@
         <img src="https://laferger.github.io/ist263/images/walnut.png"
              alt="first walnut" id="first" onclick="WinnerMessage();">
         <img src="https://laferger.github.io/ist263/images/walnut.png"
-             alt="second walnut" id="second" onclick="TryAgain();">
-        <img src="https://laferger.github.io/ist263/images/walnut.png"
-             alt="third walnut" id="third" onclick="TryAgain();">
-    </div>
-    <div id="messages"></div>
-
-    <script>
-        // Function to display the winning message
-        function WinnerMessage() {
-            document.getElementById("messages").innerHTML = "You Won!";
-        }
-
-        // Function to display the try again message
-        function TryAgain() {
-            document.getElementById("messages").innerHTML = "Wrong Shell - Try Again";
-        }
-
-        // Shuffle function to randomize the winning shell's position
-        function ShuffleShells() {
-            const shells = document.querySelectorAll('.container img');
-            const winningShellIndex = Math.floor(Math.random() * 3);
-            
-            // Set TryAgain as default for all shells, then set WinnerMessage on the winning shell
-            shells.forEach(shell => {
-                shell.onclick = TryAgain;
-            });
-            shells[winningShellIndex].onclick = WinnerMessage;
-
-            // Randomly set the order for each shell to shuffle them
-            shells.forEach(shell => {
-                shell.style.order = Math.floor(Math.random() * 3);
-            });
-        }
-    </script>
-</body>
-</html>
+             alt="second walnut" id="second"
