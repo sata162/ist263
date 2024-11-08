@@ -6,40 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 11</title>
     <link rel="stylesheet" href="https://laferger.github.io/ist263/images/animate.css">
-
     <style>
         .container {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
+            gap: 10px; /* Add some spacing between images */
         }
-
-        /* Setting initial order */
         #first { order: 1; }
         #second { order: 2; }
         #third { order: 3; }
-
-        /* Add shuffling animation */
-        .shuffle {
-            animation: shuffleAnimation 0.5s ease-in-out;
-        }
-
-        @keyframes shuffleAnimation {
-            from {
-                transform: translateX(0);
-            }
-            to {
-                transform: translateX(20px);
-            }
-        }
     </style>
 </head>
 
 <body onload="ShuffleShells();">
     <h1>Choose a Walnut</h1>
-    <div class="container">
+    <div class="container"> 
         <img src="https://laferger.github.io/ist263/images/walnut.png"
-             alt="first walnut" id="first" onclick="WinnerMessage();">
+             alt="first walnut" id="first" class="first" onclick="WinnerMessage();">
         <img src="https://laferger.github.io/ist263/images/walnut.png"
-             alt="second walnut" id="second"
+             alt="second walnut" id="second" class="second" onclick="TryAgain();">
+        <img src="https://laferger.github.io/ist263/images/walnut.png" 
+             alt="third walnut" id="third" class="third" onclick="TryAgain();">
+    </div>
+    <div id="messages"></div>
+
+    <script>
+        function ShuffleShells() {
+            // Optionally, add any shuffle logic here if needed for animation.
+        }
+
+        function WinnerMessage() {
+            document.getElementById("messages").innerText = "Congratulations! You found the walnut!";
+        }
+
+        function TryAgain() {
+            document.getElementById("messages").innerText = "Try again!";
+        }
+    </script>
+</body>
+</html>
