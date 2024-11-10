@@ -1,0 +1,82 @@
+import folium
+from folium import plugins
+import time
+import math
+
+# Coordinates of Syracuse University
+syracuse_lat, syracuse_lon = 43.0387, -76.1355  # Approx coordinates for Syracuse University
+
+# Define food pantry locations
+food_pantries = {
+    'Main Campus Pantry': [43.038, -76.135],
+    'South Campus Pantry': [43.027, -76.131],
+}
+
+# Create the base map
+m = folium.Map(location=[syracuse_lat, syracuse_lon], zoom_start=16, control_scale=True)
+
+# Function to animate path between pantries
+def animate_path(start_coords, end_coords):
+    num_steps = 50
+    for i in range(num_steps):
+        lat = start_coords[0] + (end_coords[0] - start_coords[0]) * (i / num_steps)
+        lon = start_coords[1] + (end_coords[1] - start_coords[1]) * (i / num_steps)
+        
+        folium.Marker(
+            location=[lat, lon],
+            icon=folium.Icon(color='blue', icon='arrow-right', prefix='fa')
+        ).add_to(m)
+        
+        time.sleep(0.05)
+        m.save("syracuse_food_pantries_map_animated.html")
+
+# Add food pantry markers and interactivity
+for pantry, coords in food_pantries.items():
+    marker = folium.Marker(
+        location=coords,
+        popup=f"Food Pantry: {pantry}. This location helps students with food insecurity.",
+        icon=folium.Icon(color='green', icon='leaf', prefix='fa')
+    )
+    
+    # Add hover effect using the popup event handler
+    marker.add_child(folium.Popup(f"<b>{pantry}</b><br>Helps students with food insecurity.", max_width=300))
+    marker.add_to(m)
+
+# Add animated path between Main Campus Pantry and South Campus Pantry
+animate_path(food_pantries['Main Campus Pantry'], food_pantries['South Campus Pantry'])
+
+# Add a full-screen plugin for better view control
+plugins.Fullscreen().add_to(m)
+
+# Add custom event handlers (JS) for hover and click effects
+html_event_handler = """
+    <script>
+        // Hover effect: change marker color on hover
+        var foodPantries = document.querySelectorAll('.leaflet-marker-icon');
+        foodPantries.forEach(function(marker) {
+            marker.addEventListener('mouseover', function() {
+                this.style.transform = 'scale(1.2)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            marker.addEventListener('mouseout', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Sound effect on click
+        document.querySelectorAll('.leaflet-popup').forEach(function(popup) {
+            popup.addEventListener('click', function() {
+                var audio = new Audio('https://www.soundjay.com/button/beep-07.wav');
+                audio.play();
+            });
+        });
+    </script>
+"""
+
+# Save map and add JavaScript for interactivity
+with open("syracuse_food_pantries_map_with_interactivity.html", "w") as f:
+    f.write(m._repr_html_())  # Write the map HTML output
+    f.write(html_event_handler)  # Append the custom JavaScript for events
+
+# Output message
+print("Interactive map with hover and click events saved as 'syracuse_food_pantries_map_with_interactivity.html'.")
