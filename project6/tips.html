@@ -5,7 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test html</title>
   
- </style>
+    <style>
+      body {
+          font-family: Verdana, Geneva, Tahoma, sans-serif; 
+          background-color: #F8FFE5;
+          color: #EF476F;
+      }
+
+      h1{
+           text-align:center;
+          
+      }
+     h2{
+      color:#06D6A0
+     }
+
+     nav a {
+     text-decoration:none;
+     color:#1B9AAA;
+     font-weight: bold;
+     padding:8px 12px;
+     border-radius: 5px;
+     }
+
+     nav a:hover{
+      background-color: beige;
+      color:#FFC43D;
+
+     }
+     nav img {
+          width: 40px; /* Adjust image size */
+          height: auto;
+          border-radius: 50%; /* Optional: Makes the image round */
+      }
+      .row1, .row2{
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          gap: 20px;
+          margin: 20px;
+
+      }
+
+      .row1 div, .row2 div{
+          flex: 1;
+
+      }
+       img{
+          max-width:100%;
+          height: auto;
+       }
+
+       @media screen and (max-width: 768px) {
+          nav{
+              flex-direction: column;
+              align-items: center;
+          }
+       }
+       nav .nav-image{
+          margin-top: 10px;
+       }
+
+       .row1 .row2 {
+          flex-direction: column;
+          align-items: center;
+       }
+       
+  </style>
       </head>
 <body>
       
