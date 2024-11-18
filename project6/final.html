@@ -41,10 +41,32 @@
             background-color: beige;
             color: #FFC43D;
         }
+        .news-grind{
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            flex: 2;
+        }
+        .news-items  {
+            text-align: center;
+        }
         nav img {
             width: 40px;
             height: auto;
             border-radius: 50%;
+        }
+        .news-items img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0, 0.2);
+        }
+
+        .news-items p {
+            margin-top: 10px;
+            font-size: 14px;
+            color:#333;
+            font-weight: bold;
         }
         .news-links a{
             display:block;
@@ -141,25 +163,35 @@
 
    
     <div>
-        <h3>News & Trending </h3>
+        <h3>News & Trending</h3>
         <div class="row2">
-        <div class ="news-links">
-            <a href="https://www.today.com/food/news/baskin-robbins-cheese-flavored-ice-cream-rcna178374">Baskin-Robbins’ latest cheeseboard-inspired ice cream flavor</a>
-            
+            <!-- Left side: News links -->
+            <div class="news-links">
+                <a href="https://www.today.com/food/news/baskin-robbins-cheese-flavored-ice-cream-rcna178374">Baskin-Robbins’ latest cheeseboard-inspired ice cream flavor</a>
+                <a href="https://www.cnn.com/2024/11/02/health/public-health-mcdonalds-e-coli-outbreak/index.html">McDonald's E.coli Outbreak</a>
+            </div>
+            <!-- Right side: News grid -->
+            <div class="news-grid">
+                <div class="news-item">
+                    <img src="path-to-image1.jpg" alt="News 1">
+                    <p>Ben & Jerry’s sues Unilever</p>
+                </div>
+                <div class="news-item">
+                    <img src="path-to-image2.jpg" alt="News 2">
+                    <p>Nixta Taqueria gets Michelin recognition</p>
+                </div>
+                <div class="news-item">
+                    <img src="path-to-image3.jpg" alt="News 3">
+                    <p>Olive oil prices drop significantly</p>
+                </div>
+                <div class="news-item">
+                    <img src="path-to-image4.jpg" alt="News 4">
+                    <p>Panda Inn revamped in style</p>
+                </div>
+            </div>
         </div>
-
-        <div class="news-grid">
-            <div class="news-items">
-                <img src= "../images/ben.png" alt=" News 2">
-            <p>Ben & Jerry's sues Unilever</p>
-        </div>
-
-        <a href="https://www.today.com/food/news/baskin-robbins-cheese-flavored-ice-cream-rcna178374">Baskin-Robbins’ latest cheeseboard-inspired ice cream flavor</a><br>
-        <a href="https://www.cnn.com/2024/11/02/health/public-health-mcdonalds-e-coli-outbreak/index.html">McDonald's E.coli Outbreak</a><br>
     </div>
-        <img src="../images/coli.png" alt="Attach image of bacteria ">
-    </div>
-
+    
     
 
  <body>
