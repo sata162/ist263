@@ -4,23 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        
         .row1, .row2 {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             gap: 20px;
             margin: 20px;
+            flex-wrap: wrap; /* Ensures items wrap for better responsiveness */
         }
         .row1 div, .row2 div {
             flex: 1;
         }
         .grid-item {
             flex: 1;
-            min-width: 100px;
+            min-width: 150px; /* Ensures minimum width for responsiveness */
             text-align: center;
         }
-        nav{
+        .grid-item img {
+            max-width: 100%; /* Makes images responsive */
+            height: auto;
+            border-radius: 8px; /* Optional styling */
+        }
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -37,7 +42,6 @@
         nav a:hover {
             background-color: beige;
             color: #FFC43D;
-
         }
         nav img {
             width: 40px;
@@ -47,10 +51,16 @@
         nav .nav-image {
             margin-top: 10px;
         }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
     </style>
+    <title>Recipes</title>
 </head>
 <body>
 
+    <!-- Navigation -->
     <nav>
         <a href="home.html">Home</a> <span>|</span>
         <a href="reci.html">Recipes</a> <span>|</span>
@@ -59,10 +69,10 @@
         <a href="test.html">Testimonials</a>
     </nav>
 
-    <h1> Recipes</h1>
-    <header>
-    </header>
-    <main> 
+    <h1>Recipes</h1>
+
+    <main>
+        <!-- First row -->
         <div class="row1">
             <div class="grid-item">
                 <img src="../images/chicken.png" alt="Chicken">
@@ -80,55 +90,17 @@
                 <img src="../images/breakfast.png" alt="Breakfast">
                 <p>Breakfast</p>
             </div>
+        </div>
+
+        <!-- Second row -->
+        <div class="row2">
             <div class="grid-item">
                 <img src="../images/lunch.png" alt="Lunch">
-                <p>Drinks</p>
+                <p>Lunch</p>
             </div>
             <div class="grid-item">
                 <img src="../images/dinner.png" alt="Dinner">
-                <p>Desserts</p>
-            </div>
-        </div>
-        <div class="row2"></div>
-            <div class="grid-item">
-                <img src="../images/chicken.png" alt="Chicken">
-                <p>Chicken</p>
+                <p>Dinner</p>
             </div>
             <div class="grid-item">
-                <img src="../images/beef.png" alt="Beef">
-                <p>Beef</p>
-            </div>
-            <div class="grid-item">
-                <img src="../images/seafood.png" alt="Seafood">
-                <p>Seafood</p>
-            </div>
-            <div class="grid-item">
-                <img src="../images/breakfast.png" alt="Breakfast">
-                <p>Breakfast</p>
-            </div>
-            <div class="grid-item">
-                <img src="../images/lunch.png" alt="Lunch">
-                <p>Drinks</p>
-            </div>
-            <div class="grid-item">
-                <img src="../images/dinner.png" alt="Dinner">
-                <p>Desserts</p>
-            </div>
-        </div>
-        
-
-    </main>
-
-    <footer>
-        <hr>
-        <div class="copyright">
-            <p>&copy; 2024</p>     
-        </div>
-        <div class="quote">   
-            <p>"When life gives you lemons, you make lemonade" - Unknown</p>
-        </div>
-    </footer>
-
-</body>
-</html>
-
+             
