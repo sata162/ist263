@@ -4,7 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Add  CSS here  */
+        
+        .row1, .row2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            margin: 20px;
+        }
+        .row1 div, .row2 div {
+            flex: 1;
+        }
+        .grid-item {
+            flex: 1;
+            min-width: 100px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -17,21 +32,64 @@
         <a href="test.html">Testimonials</a>
     </nav>
 
-    <h1> Sata Diarra's Biography</h1>
+    <h1> Recipes</h1>
     <header>
     </header>
     <main> 
-        <p>Hello, my name is Sata Diarra. I am a sophomore at Syracuse University. I am currently studying <strong>Information Technology.</strong> I am thrilled to be taking this course!</p>
+        <div class="row1">
+            <div class="grid-item">
+                <img src="../images/chicken.png" alt="Chicken">
+                <p>Chicken</p>
+            </div>
+            <div class="grid-item">
+                <img src="../images/beef.png" alt="Beef">
+                <p>Beef</p>
+            </div>
+            <div class="grid-item">
+                <img src="../images/seafood.png" alt="Seafood">
+                <p>Seafood</p>
+            </div>
+            <div class="grid-item">
+                <img src="../images/breakfast.png" alt="Breakfast">
+                <p>Breakfast</p>
+            </div>
+            <div class="grid-item">
+                <img src="../images/lunch.png" alt="Lunch">
+                <p>Drinks</p>
+            </div>
+            <div class="grid-item">
+                <img src="../images/dinner.png" alt="Dinner">
+                <p>Desserts</p>
+            </div>
+        </div>
+        <div class="row2"></div>
+            <div class="grid-item">
+                <img src="../images/chicken.png" alt="Chicken">
+                <p>Chicken</p>
+            </div>
+            <div class="grid-item">
+                <img src="../images/beef.png" alt="Beef">
+                <p>Beef</p>
+            </div>
+            <div class="grid-item">
+                <img src="../images/seafood.png" alt="Seafood">
+                <p>Seafood</p>
+            </div>
+            <div class="grid-item">
+                <img src="../images/breakfast.png" alt="Breakfast">
+                <p>Breakfast</p>
+            </div>
+            <div class="grid-item">
+                <img src="../images/lunch.png" alt="Lunch">
+                <p>Drinks</p>
+            </div>
+            <div class="grid-item">
+                <img src="../images/dinner.png" alt="Dinner">
+                <p>Desserts</p>
+            </div>
+        </div>
+        
 
-        <h2>Personal Information</h2>
-        <p>I love technology.</p>
-
-        <h3>Skills</h3>
-        <ol>
-            <li>Fluent Spanish Speaker</li>
-            <li>Public Speaker</li>
-            <li>Python Experience</li>
-        </ol>
     </main>
 
     <footer>
