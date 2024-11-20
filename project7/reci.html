@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Lab5</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Verdana, Geneva, Tahoma, sans-serif; 
@@ -11,8 +13,6 @@
         }
         h1 {
             text-align: center;
-        }
-        h2 {
             color: #06D6A0;
 
         }
@@ -20,7 +20,6 @@
             margin-top: 20px;
             font-weight: bold;
         }
-        
         nav{
             display: flex;
             justify-content: space-between;
@@ -64,7 +63,6 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0, 0.2);
         }
-
         .news-items p {
             margin-top: 10px;
             font-size: 14px;
@@ -106,16 +104,35 @@
                 align-items: center;
             }
         }
-        
         .grid-container {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
         .grid-item {
-            flex: 1;
-            min-width: 100px;
             text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease; /* Smooth hover effect */
+        }
+
+        .grid-item img {
+            flex: 1;
+            width: 150px; /* Set a uniform width */
+            height: 150px; /* Set a uniform height */
+            object-fit: cover; /* Ensure the image doesn't distort */
+            border-radius: 8px; 
+            text-align: center;
+        }
+        
+        .grid-item:hover {
+            transform: scale(1.1); /* Slightly enlarge the item */
+        }
+
+        /* Clickable link styles */
+        .grid-item a {
+            text-decoration: none; /* Remove underline from links */
+            color: inherit; /* Keep text color consistent */
         }
     </style>
     <title>Recipes</title>
@@ -139,33 +156,37 @@
     <main>
         <!-- First row -->
         <div class="row1">
-            <div class="grid-item">
+            <div class="food-item">
                 <img src="../images/chic.png" alt="Chicken">
                 <p>Chicken</p>
             </div>
-            <div class="grid-item">
+        
+            <div class="food-item">
                 <img src="../images/beef.png" alt="Beef">
                 <p>Beef</p>
             </div>
-            <div class="grid-item">
+        
+            <div class="food-item">
                 <img src="../images/seafood.png" alt="Seafood">
                 <p>Seafood</p>
             </div>
-            <div class="grid-item">
-                <img src="../images/breakfast.png" alt="Breakfast">
-                <p>Breakfast</p>
-
-                <div class="grid-item">
-                    <img src="../images/lunch.png" alt="Lunch">
-                    <p>Lunch</p>
-                </div>
-                <div class="grid-item">
-                    <img src="../images/dinner.png" alt="Dinner">
-                    <p>Dinner</p>
-                </div>
-                <div class="grid-item">
-                 
+        
+            <div class="food-item">
+                <img src="../images/vegan.png" alt="Vegan">
+                <p>Vegan</p>
             </div>
+        
+            <div class="food-item">
+                <img src="../images/drink.png" alt="Drinks">
+                <p>Drinks</p>
+            </div>
+        
+            <div class="food-item">
+                <img src="../images/sides.png" alt="Sides">
+                <p>Sides</p>
+            </div>
+        </div>
+        
         </div>
 
         <!-- Second row -->
