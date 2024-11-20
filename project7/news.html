@@ -19,7 +19,16 @@
             text-align: center;
            
             text-decoration:underline overline;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 2s ease-out forwards;
+        }
 
+        @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
         }
         h3 {
             margin-top: 20px;
