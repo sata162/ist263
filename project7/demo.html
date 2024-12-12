@@ -66,6 +66,27 @@
             justify-content: center;
         }
         .column:nth-child(1) { background-color: #FF9999; }
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Six Column Layout with Stacked Images</title>
+    <style>
+        /* General styles for the container and columns */
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+        .column {
+            flex: 1; /* Each column takes equal space */
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center;
+            justify-content: center;
+        }
+        .column:nth-child(1) { background-color: #FF9999; }
         .column:nth-child(2) { background-color: #FFCC99; }
         .column:nth-child(3) { background-color: #FFFF99; }
         .column:nth-child(4) { background-color: #CCFF99; }
@@ -74,44 +95,53 @@
         /* Style images */
         img {
             max-width: 80%;
-            max-height: 80%;
+            margin: 10px 0; /* Add space between images */
             cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Each column contains a clickable image -->
+        <!-- Each column contains four stacked clickable images -->
         <div class="column">
-            <a href="https://example.com/link1">
-                <img src="https://via.placeholder.com/150" alt="Image 1">
-            </a>
+            <a href="https://example.com/link1a"><img src="https://via.placeholder.com/150" alt="Image 1A"></a>
+            <a href="https://example.com/link1b"><img src="https://via.placeholder.com/150" alt="Image 1B"></a>
+            <a href="https://example.com/link1c"><img src="https://via.placeholder.com/150" alt="Image 1C"></a>
+            <a href="https://example.com/link1d"><img src="https://via.placeholder.com/150" alt="Image 1D"></a>
         </div>
         <div class="column">
-            <a href="https://example.com/link2">
-                <img src="https://via.placeholder.com/150" alt="Image 2">
-            </a>
+            <a href="https://example.com/link2a"><img src="https://via.placeholder.com/150" alt="Image 2A"></a>
+            <a href="https://example.com/link2b"><img src="https://via.placeholder.com/150" alt="Image 2B"></a>
+            <a href="https://example.com/link2c"><img src="https://via.placeholder.com/150" alt="Image 2C"></a>
+            <a href="https://example.com/link2d"><img src="https://via.placeholder.com/150" alt="Image 2D"></a>
         </div>
         <div class="column">
-            <a href="https://example.com/link3">
-                <img src="https://via.placeholder.com/150" alt="Image 3">
-            </a>
+            <a href="https://example.com/link3a"><img src="https://via.placeholder.com/150" alt="Image 3A"></a>
+            <a href="https://example.com/link3b"><img src="https://via.placeholder.com/150" alt="Image 3B"></a>
+            <a href="https://example.com/link3c"><img src="https://via.placeholder.com/150" alt="Image 3C"></a>
+            <a href="https://example.com/link3d"><img src="https://via.placeholder.com/150" alt="Image 3D"></a>
         </div>
         <div class="column">
-            <a href="https://example.com/link4">
-                <img src="https://via.placeholder.com/150" alt="Image 4">
-            </a>
+            <a href="https://example.com/link4a"><img src="https://via.placeholder.com/150" alt="Image 4A"></a>
+            <a href="https://example.com/link4b"><img src="https://via.placeholder.com/150" alt="Image 4B"></a>
+            <a href="https://example.com/link4c"><img src="https://via.placeholder.com/150" alt="Image 4C"></a>
+            <a href="https://example.com/link4d"><img src="https://via.placeholder.com/150" alt="Image 4D"></a>
         </div>
         <div class="column">
-            <a href="https://example.com/link5">
-                <img src="https://via.placeholder.com/150" alt="Image 5">
-            </a>
+            <a href="https://example.com/link5a"><img src="https://via.placeholder.com/150" alt="Image 5A"></a>
+            <a href="https://example.com/link5b"><img src="https://via.placeholder.com/150" alt="Image 5B"></a>
+            <a href="https://example.com/link5c"><img src="https://via.placeholder.com/150" alt="Image 5C"></a>
+            <a href="https://example.com/link5d"><img src="https://via.placeholder.com/150" alt="Image 5D"></a>
         </div>
         <div class="column">
-            <a href="https://example.com/link6">
-                <img src="https://via.placeholder.com/150" alt="Image 6">
-            </a>
+            <a href="https://example.com/link6a"><img src="https://via.placeholder.com/150" alt="Image 6A"></a>
+            <a href="https://example.com/link6b"><img src="https://via.placeholder.com/150" alt="Image 6B"></a>
+            <a href="https://example.com/link6c"><img src="https://via.placeholder.com/150" alt="Image 6C"></a>
+            <a href="https://example.com/link6d"><img src="https://via.placeholder.com/150" alt="Image 6D"></a>
         </div>
     </div>
+</body>
+</html>
+
 </body>
 </html>
