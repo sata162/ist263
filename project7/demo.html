@@ -1,89 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Food Items with Type Me Boxes</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
-    .row1 {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      padding: 20px;
-    }
-    .food-item {
-      flex: 1;
-      margin: 10px;
-      text-align: center;
-      background-color: #f0f0f0;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    .food-item img {
-      width: 100px;
-      height: auto;
-      margin-bottom: 10px;
-    }
-    .food-item p {
-      font-size: 16px;
-      font-weight: bold;
-    }
-    .type-box {
-      width: 80%;
-      height: 40px;
-      margin-top: 10px;
-      padding: 8px;
-      border: 2px solid #ccc;
-      border-radius: 5px;
-      text-align: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Text Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
 </head>
 <body>
-  <main>
-    <div class="row1">
-      <div class="food-item">
-        <img src="../images/chic.png" alt="Chicken">
-        <p>Chicken</p>
-        <input type="text" class="type-box" placeholder="Type Me">
-      </div>
+    <h1>Random Text Generator</h1>
+    <form id="userForm">
+        <label for="userInput">Enter a category (e.g., 'happy', 'sad'):</label>
+        <input type="text" id="userInput" name="userInput" required>
+        <button type="button" onclick="generateRandomText()">Submit</button>
+    </form>
+    <div class="result" id="result"></div>
 
-      <div class="food-item">
-        <img src="../images/beef.png" alt="Beef">
-        <p>Beef</p>
-        <input type="text" class="type-box" placeholder="Type Me">
-      </div>
+    <script>
+        function generateRandomText() {
+            // Fetch user input
+            const userInput = document.getElementById("userInput").value.trim().toLowerCase();
 
-      <div class="food-item">
-        <img src="../images/seafood.png" alt="Seafood">
-        <p>Seafood</p>
-        <input type="text" class="type-box" placeholder="Type Me">
-      </div>
+            // Predefined lists
+            const textOptions = {
+                happy: ["You are a ray of sunshine!", "Keep smiling!", "Happiness looks good on you!"],
+                sad: ["It's okay to feel sad sometimes.", "Take a deep breath, you've got this.", "Tomorrow is a new day."],
+                default: ["Interesting choice!", "That's something unique!", "Not sure what to say about that!"]
+            };
 
-      <div class="food-item">
-        <img src="../images/vegan.png" alt="Vegan">
-        <p>Vegan</p>
-        <input type="text" class="type-box" placeholder="Type Me">
-      </div>
+            // Random text generation
+            let chosenList = textOptions[userInput] || textOptions.default;
+            let randomText = chosenList[Math.floor(Math.random() * chosenList.length)];
 
-      <div class="food-item">
-        <img src="../images/drink.png" alt="Drinks">
-        <p>Drinks</p>
-        <input type="text" class="type-box" placeholder="Type Me">
-      </div>
-
-      <div class="food-item">
-        <img src="../images/sides.png" alt="Sides">
-        <p>Sides</p>
-        <input type="text" class="type-box" placeholder="Type Me">
-      </div>
-    </div>
-  </main>
+            // Display the result
+            document.getElementById("result").textContent = randomText;
+        }
+    </script>
 </body>
 </html>
