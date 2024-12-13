@@ -85,52 +85,169 @@
         </div>
     </nav>
 
-    <h1>Recipes</h1>
-
-    <main>
-        <!-- First row -->
-        <div class="row1">
-            <div class="food-item">
-                <img src="../images/chic.png" alt="Chicken">
-                <p>Chicken</p>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Lab5</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            body {
+                font-family: Verdana, Geneva, Tahoma, sans-serif; 
+                background-color: #F8FFE5;
+                color: #F76900;
+            }
+            h1 {
+                text-align: center;
+                color: #06D6A0;
+            }
+            h3 {
+                margin-top: 20px;
+                font-weight: bold;
+            }
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px;
+                background-color: #FFF;
+            }
+            nav a {
+                text-decoration: none;
+                color: #1B9AAA;
+                font-weight: bold;
+                padding: 8px 12px;
+                border-radius: 5px;
+            }
+            nav a:hover {
+                background-color: beige;
+                color: #FFC43D;
+            }
+            nav img {
+                width: 40px;
+                height: auto;
+                border-radius: 50%;
+            }
+            nav .nav-image {
+                margin-top: 10px;
+            }
+            .row1, .row2 {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 20px;
+                margin: 20px;
+            }
+            .row1 div, .row2 div {
+                flex: 1;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+            .grid-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .grid-item {
+                text-align: center;
+                text-decoration: none;
+                color: inherit;
+                transition: transform 0.3s ease;
+            }
+            .grid-item img {
+                flex: 1;
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+            .grid-item:hover {
+                transform: scale(1.1);
+            }
+            .container {
+                display: flex;
+                width: 100%;
+                height: 100vh;
+            }
+            .column {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .column:nth-child(1) { background-color: #FF9999; }
+            .column:nth-child(2) { background-color: #FFCC99; }
+            .column:nth-child(3) { background-color: #FFFF99; }
+            .column:nth-child(4) { background-color: #CCFF99; }
+            .column:nth-child(5) { background-color: #99FFCC; }
+            .column:nth-child(6) { background-color: #99CCFF; }
+            img {
+                max-width: 80%;
+                max-height: 80%;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav>
+            <div class="nav-links">
+                <a href="final.html">Home</a> <span>|</span>
+                <a href="reci.html">Recipes</a> <span>|</span>
+                <a href="news.html">Quiz</a> <span>|</span>
             </div>
-            <div class="food-item">
-                <img src="../images/beef.png" alt="Beef">
-                <p>Beef</p>
+            <div class="nav-image">
+                <img src="../images/logo.png" alt="Kuse Kitchen logo">
             </div>
-            <div class="food-item">
-                <img src="../images/seafood.png" alt="Seafood">
-                <p>Seafood</p>
+        </nav>
+    
+        <h1>Recipes</h1>
+    
+        <main>
+            <!-- First Row -->
+            <div class="row1">
+                <div class="food-item">
+                    <img src="../images/chic.png" alt="Chicken">
+                    <p>Chicken</p>
+                </div>
+                <div class="food-item">
+                    <img src="../images/beef.png" alt="Beef">
+                    <p>Beef</p>
+                </div>
+                <div class="food-item">
+                    <img src="../images/seafood.png" alt="Seafood">
+                    <p>Seafood</p>
+                </div>
+                <div class="food-item">
+                    <img src="../images/vegan.png" alt="Vegan">
+                    <p>Vegan</p>
+                </div>
+                <div class="food-item">
+                    <img src="../images/drink.png" alt="Drinks">
+                    <p>Drinks</p>
+                </div>
+                <div class="food-item">
+                    <img src="../images/sides.png" alt="Sides">
+                    <p>Sides</p>
+                </div>
             </div>
-            <div class="food-item">
-                <img src="../images/vegan.png" alt="Vegan">
-                <p>Vegan</p>
+    
+            <!-- Second Row -->
+            <div class="row2">
+                <div class="column">
+                    <a href="#"><img src="https://via.placeholder.com/150" alt="Recipe"></a>
+                </div>
+                <div class="column">
+                    <a href="#"><img src="https://via.placeholder.com/150" alt="Recipe"></a>
+                </div>
+                <div class="column">
+                    <a href="#"><img src="https://via.placeholder.com/150" alt="Recipe"></a>
+                </div>
             </div>
-            <div class="food-item">
-                <img src="../images/drink.png" alt="Drinks">
-                <p>Drinks</p>
-            </div>
-            <div class="food-item">
-                <img src="../images/sides.png" alt="Sides">
-                <p>Sides</p>
-            </div>
-        </div>
-
-        <!-- Second row -->
-        <div class="row2">
-            <div class="column">
-                <a href="https://littlesunnykitchen.com/marry-me-chicken/"><img src="../images/marry-me-chicken.jpg" alt="Marry Me Chicken"></a>
-                <a href="https://www.familyfoodonthetable.com/15-minute-honey-garlic-chicken/"><img src="../images/honey-garlic-chicken.jpg" alt="Honey Garlic Chicken"></a>
-                <a href="https://www.recipetineats.com/chicken-tacos-with-sauce/"><img src="../images/chicken-tacos.jpg" alt="Chicken Tacos"></a>
-                <a href="https://www.allrecipes.com/recipe/8805/crispy-fried-chicken/"><img src="../images/fried-chicken.jpg" alt="Fried Chicken"></a>
-            </div>
-            <div class="column">
-                <a href="https://tasteandsee.com/mongolian-beef/"><img src="../images/mongolian-beef.jpg" alt="Mongolian Beef"></a>
-                <a href="https://www.seriouseats.com/ultra-smashed-cheeseburger-recipe-food-lab"><img src="../images/cheeseburger.jpg" alt="Cheeseburger"></a>
-                <a href="https://www.allrecipes.com/recipe/282066/beef-birria/"><img src="../images/beef-birria.jpg" alt="Beef Birria"></a>
-                <a href="https://www.thekitchn.com/lasagna-recipe-simple-22956038"><img src="../images/lasagna.jpg" alt="Lasagna"></a>
-            </div>
-        </div>
-    </main>
-</body>
-</html>
+        </main>
+    </body>
+    </html>
+    
