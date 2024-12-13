@@ -3,145 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Text Generator</title>
+    <title>Recipes</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Verdana, Geneva, Tahoma, sans-serif; 
+            background-color: #F8FFE5;
+            color: #F76900;
         }
-        .result {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
+        h1 {
+            text-align: center;
+            color: #06D6A0;
         }
-    </style>
-</head>
-<body>
-    <h1>Random Text Generator</h1>
-    <form id="userForm">
-        <label for="userInput">Enter a category (e.g., 'happy', 'sad'):</label>
-        <input type="text" id="userInput" name="userInput" required>
-        <button type="button" onclick="generateRandomText()">Submit</button>
-    </form>
-    <div class="result" id="result"></div>
-
-    <script>
-        function generateRandomText() {
-            // Fetch user input
-            const userInput = document.getElementById("userInput").value.trim().toLowerCase();
-
-            // Predefined lists
-            const textOptions = {
-                happy: ["You are a ray of sunshine!", "Keep smiling!", "Happiness looks good on you!"],
-                sad: ["It's okay to feel sad sometimes.", "Take a deep breath, you've got this.", "Tomorrow is a new day."],
-                default: ["Interesting choice!", "That's something unique!", "Not sure what to say about that!"]
-            };
-
-            // Random text generation
-            let chosenList = textOptions[userInput] || textOptions.default;
-            let randomText = chosenList[Math.floor(Math.random() * chosenList.length)];
-
-            // Display the result
-            document.getElementById("result").textContent = randomText;
-        }
-    </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Six Column Layout</title>
-    <style>
-        /* General styles for the container and columns */
-        .container {
+        nav {
             display: flex;
-            width: 100%;
-            height: 100vh;
-        }
-        .column {
-            flex: 1; /* Each column takes equal space */
-            display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
+            padding: 10px 20px;
+            background-color: #FFF;
         }
-        .column:nth-child(1) { background-color: #FF9999; }
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Six Column Layout with Stacked Images</title>
-    <style>
-        /* General styles for the container and columns */
-        .container {
+        nav a {
+            text-decoration: none;
+            color: #1B9AAA;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: beige;
+            color: #FFC43D;
+        }
+        nav img {
+            width: 40px;
+            height: auto;
+            border-radius: 50%;
+        }
+        .row1, .row2 {
             display: flex;
-            width: 100%;
-            height: 100vh;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px;
         }
-        .column {
-            flex: 1; /* Each column takes equal space */
-            display: flex;
-            flex-direction: column; /* Stack items vertically */
-            align-items: center;
-            justify-content: center;
+        .row1 div, .row2 div {
+            flex: 1;
         }
-        .column:nth-child(1) { background-color: #FF9999; }
-        .column:nth-child(2) { background-color: #FFCC99; }
-        .column:nth-child(3) { background-color: #FFFF99; }
-        .column:nth-child(4) { background-color: #CCFF99; }
-        .column:nth-child(5) { background-color: #99FFCC; }
-        .column:nth-child(6) { background-color: #99CCFF; }
-        /* Style images */
         img {
-            max-width: 80%;
-            margin: 10px 0; /* Add space between images */
-            cursor: pointer;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .column img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Each column contains four stacked clickable images -->
-        <div class="column">
-            <a href="https://example.com/link1a"><img src="https://via.placeholder.com/150" alt="Image 1A"></a>
-            <a href="https://example.com/link1b"><img src="https://via.placeholder.com/150" alt="Image 1B"></a>
-            <a href="https://example.com/link1c"><img src="https://via.placeholder.com/150" alt="Image 1C"></a>
-            <a href="https://example.com/link1d"><img src="https://via.placeholder.com/150" alt="Image 1D"></a>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-links">
+            <a href="final.html">Home</a> <span>|</span>
+            <a href="reci.html">Recipes</a> <span>|</span>
+            <a href="news.html">Quiz</a> <span>|</span>
         </div>
-        <div class="column">
-            <a href="https://example.com/link2a"><img src="https://via.placeholder.com/150" alt="Image 2A"></a>
-            <a href="https://example.com/link2b"><img src="https://via.placeholder.com/150" alt="Image 2B"></a>
-            <a href="https://example.com/link2c"><img src="https://via.placeholder.com/150" alt="Image 2C"></a>
-            <a href="https://example.com/link2d"><img src="https://via.placeholder.com/150" alt="Image 2D"></a>
+        <div class="nav-image">
+            <img src="../images/logo.png" alt="Kuse Kitchen logo">
         </div>
-        <div class="column">
-            <a href="https://example.com/link3a"><img src="https://via.placeholder.com/150" alt="Image 3A"></a>
-            <a href="https://example.com/link3b"><img src="https://via.placeholder.com/150" alt="Image 3B"></a>
-            <a href="https://example.com/link3c"><img src="https://via.placeholder.com/150" alt="Image 3C"></a>
-            <a href="https://example.com/link3d"><img src="https://via.placeholder.com/150" alt="Image 3D"></a>
-        </div>
-        <div class="column">
-            <a href="https://example.com/link4a"><img src="https://via.placeholder.com/150" alt="Image 4A"></a>
-            <a href="https://example.com/link4b"><img src="https://via.placeholder.com/150" alt="Image 4B"></a>
-            <a href="https://example.com/link4c"><img src="https://via.placeholder.com/150" alt="Image 4C"></a>
-            <a href="https://example.com/link4d"><img src="https://via.placeholder.com/150" alt="Image 4D"></a>
-        </div>
-        <div class="column">
-            <a href="https://example.com/link5a"><img src="https://via.placeholder.com/150" alt="Image 5A"></a>
-            <a href="https://example.com/link5b"><img src="https://via.placeholder.com/150" alt="Image 5B"></a>
-            <a href="https://example.com/link5c"><img src="https://via.placeholder.com/150" alt="Image 5C"></a>
-            <a href="https://example.com/link5d"><img src="https://via.placeholder.com/150" alt="Image 5D"></a>
-        </div>
-        <div class="column">
-            <a href="https://example.com/link6a"><img src="https://via.placeholder.com/150" alt="Image 6A"></a>
-            <a href="https://example.com/link6b"><img src="https://via.placeholder.com/150" alt="Image 6B"></a>
-            <a href="https://example.com/link6c"><img src="https://via.placeholder.com/150" alt="Image 6C"></a>
-            <a href="https://example.com/link6d"><img src="https://via.placeholder.com/150" alt="Image 6D"></a>
-        </div>
-    </div>
-</body>
-</html>
+    </nav>
 
+    <h1>Recipes</h1>
+
+    <main>
+        <!-- First row -->
+        <div class="row1">
+            <div class="food-item">
+                <img src="../images/chic.png" alt="Chicken">
+                <p>Chicken</p>
+            </div>
+            <div class="food-item">
+                <img src="../images/beef.png" alt="Beef">
+                <p>Beef</p>
+            </div>
+            <div class="food-item">
+                <img src="../images/seafood.png" alt="Seafood">
+                <p>Seafood</p>
+            </div>
+            <div class="food-item">
+                <img src="../images/vegan.png" alt="Vegan">
+                <p>Vegan</p>
+            </div>
+            <div class="food-item">
+                <img src="../images/drink.png" alt="Drinks">
+                <p>Drinks</p>
+            </div>
+            <div class="food-item">
+                <img src="../images/sides.png" alt="Sides">
+                <p>Sides</p>
+            </div>
+        </div>
+
+        <!-- Second row -->
+        <div class="row2">
+            <div class="column">
+                <a href="https://littlesunnykitchen.com/marry-me-chicken/"><img src="../images/marry-me-chicken.jpg" alt="Marry Me Chicken"></a>
+                <a href="https://www.familyfoodonthetable.com/15-minute-honey-garlic-chicken/"><img src="../images/honey-garlic-chicken.jpg" alt="Honey Garlic Chicken"></a>
+                <a href="https://www.recipetineats.com/chicken-tacos-with-sauce/"><img src="../images/chicken-tacos.jpg" alt="Chicken Tacos"></a>
+                <a href="https://www.allrecipes.com/recipe/8805/crispy-fried-chicken/"><img src="../images/fried-chicken.jpg" alt="Fried Chicken"></a>
+            </div>
+            <div class="column">
+                <a href="https://tasteandsee.com/mongolian-beef/"><img src="../images/mongolian-beef.jpg" alt="Mongolian Beef"></a>
+                <a href="https://www.seriouseats.com/ultra-smashed-cheeseburger-recipe-food-lab"><img src="../images/cheeseburger.jpg" alt="Cheeseburger"></a>
+                <a href="https://www.allrecipes.com/recipe/282066/beef-birria/"><img src="../images/beef-birria.jpg" alt="Beef Birria"></a>
+                <a href="https://www.thekitchn.com/lasagna-recipe-simple-22956038"><img src="../images/lasagna.jpg" alt="Lasagna"></a>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
