@@ -121,6 +121,14 @@
 
         .grid-item img {
             flex: 1;
+            width: 180px; /* Set a uniform width */
+            height: 180px; /* Set a uniform height */
+            object-fit: cover; /* Ensure the image doesn't distort */
+            border-radius: 8px; 
+            text-align: center;
+
+        }.grid-items img {
+            flex: 1;
             width: 150px; /* Set a uniform width */
             height: 150px; /* Set a uniform height */
             object-fit: cover; /* Ensure the image doesn't distort */
@@ -188,7 +196,7 @@
 
         <!-- Second row -->
         <div class="row2">
-            <a href="reci.html" class="grid-item">
+            <a href="reci.html" class="grid-items">
                 <img src="../images/chic.png" alt="Chicken">
                 <p>Chicken</p>
             </a>
