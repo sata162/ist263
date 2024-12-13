@@ -162,7 +162,7 @@
                     <label for="meat">Allergry Restrictions:</label><br>
                     <input type="text" id="meat" name="meat" value="Yes or No"><br>
 
-                    <label for="meat">Do You Eat Dairy?</label><br>
+                    <label for="meat">Do You Eat Meat?</label><br>
                     <input type="text" id="meat" name="meat" value="Yes or No"><br>
 
 
@@ -176,18 +176,44 @@
                     <input type="radio" id="None" name="Gender" value="None">
                     <label for="None">Non-Binary</label><br>
 
-                    <label for="meat">Do You Eat Meat?</label><br>    
+                    <label for="Subscription"> Preffered Method of Communication?</label><br>    
                     <input type="radio" id="meat" name="response" value="Yes">
-                    <label for="meat">Male</label><br>
+                    <label for="meat">Text Messages</label><br>
                 
                     <input type="radio" id="meat" name="response" value="No">
-                    <label for="meat">Female</label><br>
+                    <label for="meat">Email Address: </label><br>
                 
                     <label for="Email"> Email Address: </Address></label><br>
                     <textarea id="Email" name="Email" rows= "3" cols= "50"></textarea><br>
                 
                     <input type="submit" value="Submit" onclick="Submitted" >
-                    
+
+                    <form id="userTest">
+                        <button type="submit" onclick="generateRandomTest()">Submit</button>
+                    </form>
+    <div class="row1" >   
+
+        <div>
+                    <script>
+                        function generateRandomTest() {
+                            // Fetch user input
+                            const userInput = document.getElementById("userInput").value.trim().toLowerCase();
+                
+                            // Predefined lists
+                            const textOptions = {
+                                allergy: ["user4389842:I tried the Sounds Delicious ", "Happiness looks good on you!"],
+                                sad: ["It's okay to feel sad sometimes.", "Take a deep breath, you've got this.", "Tomorrow is a new day."],
+                                default: ["Interesting choice!", "That's something unique!", "Not sure what to say about that!"]
+                            };
+                
+                            // Random text generation
+                            let chosenList = textOptions[userInput] || textOptions.default;
+                            let randomText = chosenList[Math.floor(Math.random() * chosenList.length)];
+                
+                            // Display the result
+                            document.getElementById("result").textContent = randomText;
+                        }
+                    </script>
                 
                 </form>
             </div>
