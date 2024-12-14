@@ -48,11 +48,6 @@
             transform: translateY(0);
         }
         }
-        h3 {
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        
         nav{
             display: flex;
             justify-content: space-between;
@@ -80,75 +75,6 @@
         nav .nav-image {
             margin-top: 10px;
         }
-        .news-grind{
-            display:grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            flex: 2;
-        }
-        .news-items  {
-            text-align: center;
-        }
-       
-        .news-items img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0, 0.2);
-        }
-
-        .news-items p {
-            margin-top: 10px;
-            font-size: 14px;
-            color:#333;
-            font-weight: bold;
-        }
-        .news-links a{
-            display:block;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 16px;
-            text-decoration: solid;
-            color: #1B9AAA;
-            padding:16px;
-            border-bottom: 1px solid black;
-            transition: all 0.3s ease;
-        }
-        .news-links a:hover {
-            color:#F76900;
-            text-decoration: underline;
-            font-weight: bold;
-        }
-        .row1, .row2 {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 20px;
-            margin: 20px;
-        }
-        .row1 div, .row2 div {
-            flex: 1;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-        
-        .grid-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .grid-item {
-            flex: 1;
-            min-width: 100px;
-            text-align: center;
-        }
     </style>
 </head>
 <body>
@@ -163,63 +89,54 @@
         </div>
     </nav>
 
-
     <h2>Cooking Quiz</h2> 
-       
-    <div class="row1" >   
-        <div class="container">
-            <h1>Food Mood Quiz</h1>
-                <!-- Question 1: What are you in the mood to eat? -->
-                <label for="food-choice">What are you in the mood for?</label><br>
-                <select id="food-choice">
-                    <option value="Chicken">Chicken</option>
-                    <option value="Beef">Beef</option>
-                    <option value="Seafood">Seafood</option>
-                    <option value="Vegan">Vegan</option>
-                    <option value="Drinks">Drinks</option>
-                    <option value="Sides">Sides</option>
-                    </select><br><br>
     
-                <!-- Question 2: Healthy or fatty? -->
-                <label for="healthy-fatty">Do you want something healthy or fatty?</label><br>
-                <select id="healthy-fatty">
-                    <option value="Healthy">Healthy</option>
-                    <option value="Fatty">Fatty</option>
-                    </select><br><br>
-    
-                <!-- Question 3: Are you subscribed? -->
-                <label for="subscribed">Are you subscribed?</label><br>
-                <select id="subscribed">
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                    </select><br><br>
-    
-                <button onclick="generateImage()">Submit</button>
-    
-                <!-- Image Display -->
-                <div id="image-container">
-                    <img id="food-image" src="../images/logo.png" alt="logo Image" style="display:none;">
-                </div>
+    <div class="container">
+        <h1>Food Mood Quiz</h1>
+        <!-- Question 1: What are you in the mood to eat? -->
+        <label for="food-choice">What are you in the mood for?</label><br>
+        <select id="food-choice">
+            <option value="Chicken">Chicken</option>
+            <option value="Beef">Beef</option>
+            <option value="Seafood">Seafood</option>
+            <option value="Vegan">Vegan</option>
+            <option value="Drinks">Drinks</option>
+            <option value="Sides">Sides</option>
+        </select><br><br>
 
+        <!-- Question 2: Healthy or fatty? -->
+        <label for="healthy-fatty">Do you want something healthy or fatty?</label><br>
+        <select id="healthy-fatty">
+            <option value="Healthy">Healthy</option>
+            <option value="Fatty">Fatty</option>
+        </select><br><br>
 
-            </div>
-    
-        
-            <script>
-                function generateImage() {
-                    // Get the values of the two questions
-                    const foodChoice = document.getElementById("food-choice").value;
-                    const healthyFatty = document.getElementById("healthy-fatty").value;
+        <button onclick="generateImage()">Submit</button>
 
-                    // Get the image element
-                    const foodImage = document.getElementById("food-image");
+        <!-- Image Display -->
+        <div id="image-container">
+            <img id="food-image" src="../images/logo.png" alt="logo Image" style="display:none;">
+        </div>
 
-                    // Default image is blank (no image)
-                    let imageUrl = "../images/logo.png";
-                    let altText = "Default logo";
+        <!-- Message Display -->
+        <div id="message-container" style="margin-top: 20px; color: #1B9AAA; font-weight: bold; text-align: center;"></div>
+    </div>
 
-                    // Use if statements to check the answers and set the image accordingly
-                    if (foodChoice === "Chicken" && healthyFatty === "Fatty") {
+    <script>
+        function generateImage() {
+            // Get the values of the two questions
+            const foodChoice = document.getElementById("food-choice").value;
+            const healthyFatty = document.getElementById("healthy-fatty").value;
+
+            // Get the image element
+            const foodImage = document.getElementById("food-image");
+
+            // Default image is blank (no image)
+            let imageUrl = "../images/logo.png";
+            let altText = "Default logo";
+
+            // Use if statements to check the answers and set the image accordingly
+            if (foodChoice === "Chicken" && healthyFatty === "Fatty") {
                         imageUrl = "../images/fried.png";
                         altText = "Fried Chicken";
                     } 
@@ -269,50 +186,47 @@
                         imageUrl = "../images/rice.png";
                         altText = "White Rice";
                     }
+// Add remaining conditions...
 
-                    // Update the image source and alt text
-                    foodImage.src = imageUrl;
-                    foodImage.alt = altText;
+            // Update the image source and alt text
+            foodImage.src = imageUrl;
+            foodImage.alt = altText;
 
-                    // Show the image
-                    foodImage.style.display = imageUrl ? "block" : "none";
-                    function generateRandomTestimonial() {
-                const users = ["Alex", "Jordan", "Taylor", "Sam", "Morgan", "Jamie", "Casey", "Riley"];
-                const dishes = ["lasagna", "pancakes", "vegetarian chili", "chocolate cake", "grilled salmon", "quinoa salad"];
-                const adjectives = ["delicious", "easy to follow", "fantastic", "life-changing", "absolutely amazing", "perfectly detailed"];
-                const experiences = [
-                    "and it turned out great!",
-                    "and my whole family loved it!",
-                    "and it was so much easier than I expected.",
-                    "and it became my go-to recipe.",
-                    "and the step-by-step instructions were super helpful.",
-                    "and I’ve already shared it with all my friends."
-                ];
+            // Show the image
+            foodImage.style.display = imageUrl ? "block" : "none";
 
-                // Generate random indices
-                const user = users[Math.floor(Math.random() * users.length)];
-                const dish = dishes[Math.floor(Math.random() * dishes.length)];
-                const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
-                const experience = experiences[Math.floor(Math.random() * experiences.length)];
+            // Generate and display a random testimonial
+            const messageContainer = document.getElementById("message-container");
+            const testimonial = generateRandomTestimonial();
+            messageContainer.textContent = testimonial;
+        }
 
-                // Combine into a testimonial
-                return `${user} says: "I followed the recipe for ${dish}, and it was ${adjective} ${experience}"`;
-            }
+        function generateRandomTestimonial() {
+            const users = ["Alex", "Jordan", "Taylor", "Sam", "Morgan", "Jamie", "Casey", "Riley"];
+            const dishes = ["recipe"];
+            const adjectives = ["delicious", "easy to follow", "fantastic", "life-changing", "absolutely amazing", "perfectly detailed"];
+            const experiences = [
+                "and it turned out great!",
+                "and my whole family loved it!",
+                "and it was so much easier than I expected.",
+                "and it became my go-to recipe.",
+                "and the step-by-step instructions were super helpful.",
+                "and I’ve already shared it with all my friends."
+            ];
 
-            // Example usage
-            console.log(generateRandomTestimonial());
-                }
+            // Generate random indices
+            const user = users[Math.floor(Math.random() * users.length)];
+            const dish = dishes[Math.floor(Math.random() * dishes.length)];
+            const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+            const experience = experiences[Math.floor(Math.random() * experiences.length)];
 
-            </script>
-        </div>
-    </div>  
-</div>
-<hr>
-        
+            // Combine into a testimonial
+            return `${user} says: "I followed the ${dish}, and it was ${adjective} ${experience}"`;
+        }
+    </script>
+
     <footer>
         <p>&copy; 2024 Kuse Kitchen. All rights reserved.</p>
     </footer>
-    
-
 </body>
 </html>
