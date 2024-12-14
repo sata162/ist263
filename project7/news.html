@@ -205,62 +205,69 @@
             </div>
     
         
-        <script>
-            function generateImage() {
-                // Get the values of the three questions
-                const foodChoice = document.getElementById("food-choice").value;
-                const healthyFatty = document.getElementById("healthy-fatty").value;
-                
-                // Get the image container and the image element
-                const imageContainer = document.getElementById("image-container");
-                const foodImage = document.getElementById("food-image");
-    
-                // Default image is blank (no image)
-                let src="../images/logo.png";
-    
-                // Use if statements to check the answers and set the image accordingly
-                if (foodChoice === "Chicken" && healthyFatty === "Fatty") {
-                    img src="../images/fried.png" alt="Fried Chicken"
-                } else if (foodChoice === "Chicken" && healthyFatty === "Healthy") {
-                    img src="../images/marry.png" alt="Marry Me Chicken Recipe"
-                } else if (foodChoice === "Beef" && healthyFatty === "Healthy") {
-                    img src="../images/mongolian.png" alt="Mongolian Beef"
-                } else if (foodChoice === "Beef" && healthyFatty === "Fatty") {
-                    img src="../images/chesse.png" alt="Cheeseburger Recipe"
-                } else if (foodChoice === "Seafood" && healthyFatty === "Healthy") {
-                    img src="../images/clams.png" alt="Steamed Clams Recipe"
-                } else if (foodChoice === "Seafood" && healthyFatty === "Fatty") {
-                    img src="../images/crab.png" alt="Crab Cakes"
-                } else if (foodChoice === "Vegan" && healthyFatty === "Fatty") {
-                    img src="../images/pancakes.png" alt="Vegan Pancakes"
-                } else if (foodChoice === "Vegan" && healthyFatty === "Healthy") {
-                    img src="../images/chicpea.png" alt="Seasame Chickpea Recipe"
-                } else if (foodChoice === "Drinks" && healthyFatty === "Fatty") {
-                    img src="../images/quito.png" alt="Coquito"
-                } else if (foodChoice === "Drinks" && healthyFatty === "Healthy") {
-                    img src="../images/tea.png" alt="Ice Tea " 
-                } else if (foodChoice === "Sides" && healthyFatty === "Fatty") {
-                    img src="../images/fries.png" alt="French Fries"
-                } else if (foodChoice === "Sides" && healthyFatty === "Healthy") {
-                    img src="../images/rice.png" alt="White Rice "
-                } else {
-                    imageUrl = ""; // Blank image
+            <script>
+                function generateImage() {
+                    // Get the values of the two questions
+                    const foodChoice = document.getElementById("food-choice").value;
+                    const healthyFatty = document.getElementById("healthy-fatty").value;
+
+                    // Get the image element
+                    const foodImage = document.getElementById("food-image");
+
+                    // Default image is blank (no image)
+                    let imageUrl = "../images/logo.png";
+                    let altText = "Default logo";
+
+                    // Use if statements to check the answers and set the image accordingly
+                    if (foodChoice === "Chicken" && healthyFatty === "Fatty") {
+                        imageUrl = "../images/fried.png";
+                        altText = "Fried Chicken";
+                    } else if (foodChoice === "Chicken" && healthyFatty === "Healthy") {
+                        imageUrl = "../images/marry.png";
+                        altText = "Marry Me Chicken Recipe";
+                    } else if (foodChoice === "Beef" && healthyFatty === "Healthy") {
+                        imageUrl = "../images/mongolian.png";
+                        altText = "Mongolian Beef";
+                    } else if (foodChoice === "Beef" && healthyFatty === "Fatty") {
+                        imageUrl = "../images/cheese.png";
+                        altText = "Cheeseburger Recipe";
+                    } else if (foodChoice === "Seafood" && healthyFatty === "Healthy") {
+                        imageUrl = "../images/clams.png";
+                        altText = "Steamed Clams Recipe";
+                    } else if (foodChoice === "Seafood" && healthyFatty === "Fatty") {
+                        imageUrl = "../images/crab.png";
+                        altText = "Crab Cakes";
+                    } else if (foodChoice === "Vegan" && healthyFatty === "Fatty") {
+                        imageUrl = "../images/pancakes.png";
+                        altText = "Vegan Pancakes";
+                    } else if (foodChoice === "Vegan" && healthyFatty === "Healthy") {
+                        imageUrl = "../images/chicpea.png";
+                        altText = "Sesame Chickpea Recipe";
+                    } else if (foodChoice === "Drinks" && healthyFatty === "Fatty") {
+                        imageUrl = "../images/quito.png";
+                        altText = "Coquito";
+                    } else if (foodChoice === "Drinks" && healthyFatty === "Healthy") {
+                        imageUrl = "../images/tea.png";
+                        altText = "Iced Tea";
+                    } else if (foodChoice === "Sides" && healthyFatty === "Fatty") {
+                        imageUrl = "../images/fries.png";
+                        altText = "French Fries";
+                    } else if (foodChoice === "Sides" && healthyFatty === "Healthy") {
+                        imageUrl = "../images/rice.png";
+                        altText = "White Rice";
+                    }
+
+                    // Update the image source and alt text
+                    foodImage.src = imageUrl;
+                    foodImage.alt = altText;
+
+                    // Show the image
+                    foodImage.style.display = imageUrl ? "block" : "none";
                 }
-    
-                // Update the image source
-                foodImage.src = imageUrl;
-    
-                // Show the image
-                if (imageUrl) {
-                    foodImage.style.display = "block";
-                } else {
-                    foodImage.style.display = "none";
-                }
-            }
-        </script>
-                </form>
-            </div>
-        
+
+            </script>
+        </div>
+    </div>  
 </div>
 <hr>
         
