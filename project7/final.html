@@ -7,22 +7,22 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: Verdana, Geneva, Tahoma, sans-serif; 
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
             background-color: #F8FFE5;
-            color: #F76900;
+            color: #2E5970;
         }
         h1 {
             text-align: center;
+            color: #2E5970;
         }
         h2 {
-            color: #06D6A0;
-
+            color: #2E5970;
         }
         h3 {
             margin-top: 20px;
             font-weight: bold;
         }
-        nav{
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -37,9 +37,8 @@
             border-radius: 5px;
         }
         nav a:hover {
-            background-color:#f2b668;
-            color: #F76900;
-
+            background-color: #f2b668;
+            color: #2E5970;
         }
         nav img {
             width: 40px;
@@ -49,40 +48,39 @@
         nav .nav-image {
             margin-top: 10px;
         }
-        .news-grind{
-            display:grid;
+        .news-grind {
+            display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 15px;
             flex: 2;
         }
-        .news-items  {
+        .news-items {
             text-align: center;
         }
-       
         .news-items img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0, 0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
         .news-items p {
             margin-top: 10px;
             font-size: 14px;
-            color:#333;
+            color: #333;
             font-weight: bold;
         }
-        .news-links a{
-            display:block;
+        .news-links a {
+            display: block;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 16px;
             text-decoration: solid;
-            color: #1B9AAA;
-            padding:16px;
+            color: #2E5970;
+            padding: 16px;
             border-bottom: 1px solid black;
             transition: all 0.3s ease;
         }
         .news-links a:hover {
-            color:#F76900;
+            color: #944000;
             text-decoration: underline;
             font-weight: bold;
         }
@@ -116,27 +114,30 @@
             text-decoration: none;
             color: inherit;
             transition: transform 0.3s ease; /* Smooth hover effect */
-            width: 50% ;/* Set a uniform width */
-            height: 200px;
         }
-
         .grid-item img {
             flex: 1;
-            width: 150px; /* Set a uniform width */
-            height: 150px; /* Set a uniform height */
-            object-fit: cover; /* Ensure the image doesn't distort */
-            border-radius: 8px; 
+            width: 180px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
             text-align: center;
         }
-        
+        .grid-items img {
+            flex: 1;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            text-align: center;
+        }
         .grid-item:hover {
             transform: scale(1.1); /* Slightly enlarge the item */
         }
-
         /* Clickable link styles */
         .grid-item a {
-            text-decoration: none; /* Remove underline from links */
-            color: inherit; /* Keep text color consistent */
+            text-decoration: none;
+            color: inherit;
         }
     </style>
 </head>
