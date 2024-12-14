@@ -185,59 +185,53 @@
          </a>
     </div>
 
-   
     <div>
         <h3>News & Trending</h3>
         <div class="row2">
             <!-- Left side: News links -->
             <div class="news-links">
-                <img src="../images/coli.png" alt="E.coli">>
+                <img src="../images/coli.png" alt="E.coli">
                 <a href="https://www.cnn.com/2024/11/02/health/public-health-mcdonalds-e-coli-outbreak/index.html">McDonald's E.coli Outbreak</a>
                 <div>
                 <h3>Subscribe To Our Newsletter </h3>
-                    <form action="https://formspree.io/f/xpwzlldg" method= "POST">
+                <form action="https://formspree.io/f/xpwzlldg" method="POST">
+                    <label for="fname">First name:</label><br>
+                    <input type="text" id="fname" name="fname" value="John"><br>
                 
-                        <label for="fname">First name:</label><br>
-                        <input type="text" id="fname" name="fname" value="John"><br>
-                    
-                        <label for="lname">Last name:</label><br>
-                        <input type="text" id="lname" name="lname" value="Doe"><br>
-    
-                        <label for="meat">Allergry Restrictions:</label><br>
-                        <input type="text" id="meat" name="meat" value="Yes or No"><br>
-    
-                        <label for="meat">Do You Eat Meat?</label><br>
-                        <input type="text" id="meat" name="meat" value="Yes or No"><br>
-    
-    
-                        <label for="sex">Sex:</label><br>    
-                        <input type="radio" id="Male1" name="Gender" value="Male">
-                        <label for="Male1">Male</label><br>
-                    
-                        <input type="radio" id="Female" name="Gender" value="Female">
-                        <label for="Female">Female</label><br>
-                    
-                        <input type="radio" id="None" name="Gender" value="None">
-                        <label for="None">Non-Binary</label><br>
-    
-                        <label for="Subscription"> Preffered Method of Communication?</label><br>    
-                        <input type="radio" id="meat" name="response" value="Yes">
-                        <label for="meat">Text Messages</label><br>
-                    
-                        <input type="radio" id="meat" name="response" value="No">
-                        <label for="meat">Email Address: </label><br>
-                    
-                        <label for="Email"> Email Address: </Address></label><br>
-                        <textarea id="Email" name="Email" rows= "3" cols= "50"></textarea><br>
-                    
-                        <input type="submit" value="Submit" onclick="Submitted" >
-    
-                        <form id="userTest">
-                    </form>
+                    <label for="lname">Last name:</label><br>
+                    <input type="text" id="lname" name="lname" value="Doe"><br>
+
+                    <label for="allergy-restrictions">Allergy Restrictions:</label><br>
+                    <input type="text" id="allergy-restrictions" name="allergy-restrictions" value="Yes or No"><br>
+
+                    <label for="diet-meat">Do You Eat Meat?</label><br>
+                    <input type="text" id="diet-meat" name="diet-meat" value="Yes or No"><br>
+
+                    <label>Sex:</label><br>    
+                    <input type="radio" id="Male1" name="Gender" value="Male">
+                    <label for="Male1">Male</label><br>
+                
+                    <input type="radio" id="Female" name="Gender" value="Female">
+                    <label for="Female">Female</label><br>
+                
+                    <input type="radio" id="None" name="Gender" value="None">
+                    <label for="None">Non-Binary</label><br>
+
+                    <label>Preferred Method of Communication:</label><br>    
+                    <input type="radio" id="text-messages" name="response" value="Text">
+                    <label for="text-messages">Text Messages</label><br>
+                
+                    <input type="radio" id="email" name="response" value="Email">
+                    <label for="email">Email Address:</label><br>
+
+                    <label for="email-text">Email Address:</label><br>
+                    <textarea id="email-text" name="email-text" rows="3" cols="50"></textarea><br>
+                
+                    <input type="submit" value="Submit" onclick="Submitted">
+                </form>
                 </div>  
             </div>
          
-    
             <!-- Right side: News grid -->
             <div class="news-grid">
                 <div class="news-item">
@@ -246,18 +240,18 @@
                 </div>
                 <div class="news-item">
                     <img src="../images/noodle.jpg" alt="Noodle shop">
-                    <a href="https://nypost.com/2024/12/12/lifestyle/nyc-noodle-spot-named-best-chinese-restaurant-in-us-for-2024/">NYC noodle shop named best Chinese restaurant in the US for 2024: I just want to scream right now</a>
+                    <a href="https://nypost.com/2024/12/12/lifestyle/nyc-noodle-spot-named-best-chinese-restaurant-in-us-for-2024/">NYC noodle shop named best Chinese restaurant in the US for 2024</a>
                 </div>
                 <div class="news-item">
                     <img src="../images/panda.jpg" alt="News 4">
-                    <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.pasadenanow.com/weekendr/revamped-panda-inn-re-arrives-in-spectacular-fashion/&ved=2ahUKEwj9wr3izqWKAxWyAHkGHV5CF8gQFnoECDYQAQ&usg=AOvVaw1_fQtLBjkq5RDknwY-LVov">Panda Inn revamped in style</a>
+                    <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.pasadenanow.com/weekendr/revamped-panda-inn-re-arrives-in-spectacular-fashion/">Panda Inn revamped in style</a>
                 </div>
             </div>
         </div>
-    
+    </div>
+
     <footer>
         <p>&copy; 2024 Kuse Kitchen. All rights reserved.</p>
     </footer>
-
- <body>
- </html>
+</body>
+</html>
