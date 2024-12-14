@@ -1,103 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Food Mood Quiz</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-    .container {
-      max-width: 400px;
-      margin: 50px auto;
-      padding: 20px;
-      border: 2px solid #ccc;
-      border-radius: 10px;
-      background-color: #f9f9f9;
-    }
-    img {
-      margin-top: 20px;
-      max-width: 300px;
-      height: auto;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Lab5</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif; 
+            background-color: #F8FFE5;
+            color: #F76900;
+        }
+      
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        img {
+            margin-top: 20px;
+            max-width: 300px;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    
+        h1 {
+            text-align: center;
+        }
+        h2 {
+            color: #1B9AAA;
+            text-align: center;
+           
+            text-decoration:underline overline;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 2s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #FFF;
+        }
+        nav a {
+            text-decoration: none;
+            color: #1B9AAA;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: beige;
+            color: #FFC43D;
+
+        }
+        nav img {
+            width: 40px;
+            height: auto;
+            border-radius: 50%;
+        }
+        nav .nav-image {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
+    <nav>
+        <div class="nav-links">
+            <a href="final.html">Home</a> <span>|</span>
+            <a href="reci.html">Recipes</a> <span>|</span>
+            <a href="news.html">Quiz</a> <span>|</span>
+        </div>
+        <div class="nav-image">
+            <img src="../images/logo.png" alt="Kuse Kitchen logo">
+        </div>
+    </nav>
 
-  <div class="container">
-    <h1>Food Mood Quiz</h1>
+    <h2>Cooking Quiz</h2> 
+    
+    <div class="container">
+        <h1>Food Mood Quiz</h1>
+        <!-- Question 1: What are you in the mood to eat? -->
+        <label for="food-choice">What are you in the mood for?</label><br>
+        <select id="food-choice">
+            <option value="Chicken">Chicken</option>
+            <option value="Beef">Beef</option>
+            <option value="Seafood">Seafood</option>
+            <option value="Vegan">Vegan</option>
+            <option value="Drinks">Drinks</option>
+            <option value="Sides">Sides</option>
+        </select><br><br>
 
-    <!-- Question 1: What are you in the mood to eat? -->
-    <label for="food-choice">What are you in the mood to eat?</label><br>
-    <select id="food-choice">
-      <option value="Chicken">Chicken</option>
-      <option value="Pizza">Pizza</option>
-      <option value="Salad">Salad</option>
-    </select><br><br>
+        <!-- Question 2: Healthy or fatty? -->
+        <label for="healthy-fatty">Do you want something healthy or fatty?</label><br>
+        <select id="healthy-fatty">
+            <option value="Healthy">Healthy</option>
+            <option value="Fatty">Fatty</option>
+        </select><br><br>
 
-    <!-- Question 2: Healthy or fatty? -->
-    <label for="healthy-fatty">Do you want something healthy or fatty?</label><br>
-    <select id="healthy-fatty">
-      <option value="Healthy">Healthy</option>
-      <option value="Fatty">Fatty</option>
-    </select><br><br>
+        <button onclick="generateImage()">Submit</button>
 
-    <!-- Question 3: Are you subscribed? -->
-    <label for="subscribed">Are you subscribed?</label><br>
-    <select id="subscribed">
-      <option value="Yes">Yes</option>
-      <option value="No">No</option>
-    </select><br><br>
+        <!-- Image Display -->
+        <div id="image-container">
+            <img id="food-image" src="../images/logo.png" alt="logo Image" style="display:none;">
+        </div>
 
-    <button onclick="generateImage()">Submit</button>
+        <!-- Message Display -->
+        <div id="message-container" style="margin-top: 20px; color: #1B9AAA; font-weight: bold; text-align: center;"></div>
+    </div>
 
-    <!-- Image Display -->
-    <div id="image-container">
-      <img id="food-image" src="" alt="Food Image" style="display:none;">
-    </div>
-  </div>
+    <script>
+        function generateImage() {
+            // Get the values of the two questions
+            const foodChoice = document.getElementById("food-choice").value;
+            const healthyFatty = document.getElementById("healthy-fatty").value;
 
-  <script>
-    function generateImage() {
-      // Get the values of the three questions
-      const foodChoice = document.getElementById("food-choice").value;
-      const healthyFatty = document.getElementById("healthy-fatty").value;
-      const subscribed = document.getElementById("subscribed").value;
+            // Get the image element
+            const foodImage = document.getElementById("food-image");
 
-      // Get the image container and the image element
-      const imageContainer = document.getElementById("image-container");
-      const foodImage = document.getElementById("food-image");
+            // Default image is blank (no image)
+            let imageUrl = "../images/logo.png";
+            let altText = "Default logo";
 
-      // Default image is blank (no image)
-      let imageUrl = "";
+            // Use if statements to check the answers and set the image accordingly
+            if (foodChoice === "Chicken" && healthyFatty === "Fatty") {
+                imageUrl = "../images/fried.png";
+                altText = "Fried Chicken";
+            } else if (foodChoice === "Chicken" && healthyFatty === "Healthy") {
+                imageUrl = "../images/marry.png";
+                altText = "Marry Me Chicken Recipe";
+            } // Add remaining conditions...
 
-      // Use if statements to check the answers and set the image accordingly
-      if (foodChoice === "Chicken" && healthyFatty === "Fatty" && subscribed === "No") {
-        imageUrl = "https://via.placeholder.com/300x200?text=Chicken+Fatty+Not+Subscribed"; // Example image URL
-      } else if (foodChoice === "Pizza" && healthyFatty === "Fatty" && subscribed === "Yes") {
-        imageUrl = "https://via.placeholder.com/300x200?text=Pizza+Fatty+Subscribed"; // Example image URL
-      } else if (foodChoice === "Salad" && healthyFatty === "Healthy" && subscribed === "Yes") {
-        imageUrl = "https://via.placeholder.com/300x200?text=Salad+Healthy+Subscribed"; // Example image URL
-      } else {
-        imageUrl = ""; // Blank image
-      }
+            // Update the image source and alt text
+            foodImage.src = imageUrl;
+            foodImage.alt = altText;
 
-      // Update the image source
-      foodImage.src = imageUrl;
+            // Show the image
+            foodImage.style.display = imageUrl ? "block" : "none";
 
-      // Show the image
-      if (imageUrl) {
-        foodImage.style.display = "block";
-      } else {
-        foodImage.style.display = "none";
-      }
-    }
-  </script>
+            // Generate and display a random testimonial
+            const messageContainer = document.getElementById("message-container");
+            const testimonial = generateRandomTestimonial();
+            messageContainer.textContent = testimonial;
+        }
 
+        function generateRandomTestimonial() {
+            const users = ["Alex", "Jordan", "Taylor", "Sam", "Morgan", "Jamie", "Casey", "Riley"];
+            const dishes = ["lasagna", "pancakes", "vegetarian chili", "chocolate cake", "grilled salmon", "quinoa salad"];
+            const adjectives = ["delicious", "easy to follow", "fantastic", "life-changing", "absolutely amazing", "perfectly detailed"];
+            const experiences = [
+                "and it turned out great!",
+                "and my whole family loved it!",
+                "and it was so much easier than I expected.",
+                "and it became my go-to recipe.",
+                "and the step-by-step instructions were super helpful.",
+                "and I’ve already shared it with all my friends."
+            ];
+
+            // Generate random indices
+            const user = users[Math.floor(Math.random() * users.length)];
+            const dish = dishes[Math.floor(Math.random() * dishes.length)];
+            const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+            const experience = experiences[Math.floor(Math.random() * experiences.length)];
+
+            // Combine into a testimonial
+            return `${user} says: "I followed the recipe for ${dish}, and it was ${adjective} ${experience}"`;
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Kuse Kitchen. All rights reserved.</p>
+    </footer>
 </body>
 </html>
