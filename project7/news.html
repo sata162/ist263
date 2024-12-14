@@ -11,6 +11,24 @@
             background-color: #F8FFE5;
             color: #F76900;
         }
+      
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        img {
+            margin-top: 20px;
+            max-width: 300px;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    
         h1 {
             text-align: center;
         }
@@ -146,75 +164,82 @@
     </nav>
 
 
-    <h2>Cooking Quiz</h2>
-   
-    <div class="row2" >   
-        <div>
-
-                <form action="https://formspree.io/f/xpwzlldg" method= "POST">
-            
-                    <label for="fname">First name:</label><br>
-                    <input type="text" id="fname" name="fname" value="John"><br>
-                
-                    <label for="lname">Last name:</label><br>
-                    <input type="text" id="lname" name="lname" value="Doe"><br>
-
-                    <label for="meat">Allergry Restrictions:</label><br>
-                    <input type="text" id="meat" name="meat" value="Yes or No"><br>
-
-                    <label for="meat">Do You Eat Meat?</label><br>
-                    <input type="text" id="meat" name="meat" value="Yes or No"><br>
-
-
-                    <label for="sex">Sex:</label><br>    
-                    <input type="radio" id="Male1" name="Gender" value="Male">
-                    <label for="Male1">Male</label><br>
-                
-                    <input type="radio" id="Female" name="Gender" value="Female">
-                    <label for="Female">Female</label><br>
-                
-                    <input type="radio" id="None" name="Gender" value="None">
-                    <label for="None">Non-Binary</label><br>
-
-                    <label for="Subscription"> Preffered Method of Communication?</label><br>    
-                    <input type="radio" id="meat" name="response" value="Yes">
-                    <label for="meat">Text Messages</label><br>
-                
-                    <input type="radio" id="meat" name="response" value="No">
-                    <label for="meat">Email Address: </label><br>
-                
-                    <label for="Email"> Email Address: </Address></label><br>
-                    <textarea id="Email" name="Email" rows= "3" cols= "50"></textarea><br>
-                
-                    <input type="submit" value="Submit" onclick="Submitted" >
-
-                    <form id="userTest">
-                        <button type="submit" onclick="generateRandomTest()">Submit</button>
-                    </form>
+    <h2>Cooking Quiz</h2> 
+       
     <div class="row1" >   
+        <div class="container">
+            <h1>Food Mood Quiz</h1>
+                <!-- Question 1: What are you in the mood to eat? -->
+                <label for="food-choice">What are you in the mood for?</label><br>
+                <select id="food-choice">
+                    <option value="Chicken">Chicken</option>
+                    <option value="Beef">Beef</option>
+                    <option value="Seafood">Seafood</option>
+                    <option value="Vegan">Vegan</option>
+                    <option value="Drinks">Drinks</option>
+                    <option value="Sides">Sides</option>
+                    </select><br><br>
+    
+                <!-- Question 2: Healthy or fatty? -->
+                <label for="healthy-fatty">Do you want something healthy or fatty?</label><br>
+                <select id="healthy-fatty">
+                    <option value="Healthy">Healthy</option>
+                    <option value="Fatty">Fatty</option>
+                    </select><br><br>
+    
+                <!-- Question 3: Are you subscribed? -->
+                <label for="subscribed">Are you subscribed?</label><br>
+                <select id="subscribed">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    </select><br><br>
+    
+                <button onclick="generateImage()">Submit</button>
+    
+                <!-- Image Display -->
+                <div id="image-container">
+                    <img id="food-image" src="../images/logo.png" alt="logo Image" style="display:none;">
+                </div>
 
-        <div>
-                    <script>
-                        function generateRandomTest() {
-                            // Fetch user input
-                            const userInput = document.getElementById("userInput").value.trim().toLowerCase();
+
+            </div>
+    
+        
+        <script>
+            function generateImage() {
+                // Get the values of the three questions
+                const foodChoice = document.getElementById("food-choice").value;
+                const healthyFatty = document.getElementById("healthy-fatty").value;
                 
-                            // Predefined lists
-                            const textOptions = {
-                                allergy: ["user4389842:I tried the Sounds Delicious ", "Happiness looks good on you!"],
-                                sad: ["It's okay to feel sad sometimes.", "Take a deep breath, you've got this.", "Tomorrow is a new day."],
-                                default: ["Interesting choice!", "That's something unique!", "Not sure what to say about that!"]
-                            };
-                
-                            // Random text generation
-                            let chosenList = textOptions[userInput] || textOptions.default;
-                            let randomText = chosenList[Math.floor(Math.random() * chosenList.length)];
-                
-                            // Display the result
-                            document.getElementById("result").textContent = randomText;
-                        }
-                    </script>
-                
+                // Get the image container and the image element
+                const imageContainer = document.getElementById("image-container");
+                const foodImage = document.getElementById("food-image");
+    
+                // Default image is blank (no image)
+                let src="../images/logo.png";
+    
+                // Use if statements to check the answers and set the image accordingly
+                if (foodChoice === "Chicken" && healthyFatty === "Fatty") {
+                    img src="../images/chic.png" alt="Seafood"
+                } else if (foodChoice === "Pizza" && healthyFatty === "Fatty") {
+                    imageUrl = "https://via.placeholder.com/300x200?text=Pizza+Fatty+Subscribed"; // Example image URL
+                } else if (foodChoice === "Salad" && healthyFatty === "Healthy") {
+                    imageUrl = "https://via.placeholder.com/300x200?text=Salad+Healthy+Subscribed"; // Example image URL
+                } else {
+                    imageUrl = ""; // Blank image
+                }
+    
+                // Update the image source
+                foodImage.src = imageUrl;
+    
+                // Show the image
+                if (imageUrl) {
+                    foodImage.style.display = "block";
+                } else {
+                    foodImage.style.display = "none";
+                }
+            }
+        </script>
                 </form>
             </div>
         
