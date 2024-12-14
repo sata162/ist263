@@ -1,248 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuse Kitchen</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 20px;
-            background-color: #f8f8f8;
-        }
-
-        header img {
-            height: 50px;
-        }
-
-        .topnav {
-            display: flex;
-            gap: 15px;
-        }
-
-        .topnav a {
-            text-decoration: none;
-            color: #333;
-            padding: 8px 16px;
-            transition: background-color 0.3s ease;
-        }
-
-        .topnav a:hover {
-            background-color: #ddd;
-        }
-
-        .icon {
-            display: none;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-            padding: 20px;
-        }
-
-        .grid-item {
-            text-align: center;
-        }
-
-        .grid-item img {
-            width: 100%;
-            height: auto;
-        }
-
-        .news-grid {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .news-item {
-            text-align: center;
-            max-width: 300px;
-        }
-
-        .news-item img {
-            width: 100%;
-            height: auto;
-        }
-
-        form {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-        }
-
-        form label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        form input[type="text"],
-        form input[type="email"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        form input[type="radio"] {
-            margin-right: 5px;
-        }
-
-        form input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        form input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #f8f8f8;
-            position: relative;
-        }
-
-        /* Responsive Design */
-        @media screen and (max-width: 600px) {
-            .topnav {
-                flex-direction: column;
-            }
-
-            .icon {
-                display: block;
-                cursor: pointer;
-            }
-
-            .topnav.responsive {
-                flex-direction: column;
-                gap: 0;
-            }
-
-            .topnav.responsive a {
-                display: block;
-                text-align: left;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Mood Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+    }
+    img {
+      margin-top: 20px;
+      max-width: 300px;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
 </head>
-
 <body>
-    <!-- Header Section -->
-    <header>
-        <img src="../images/logo.png" alt="Kuse Kitchen logo">
-        <nav class="topnav" id="topnav">
-            <a href="#recipes">Recipes</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact Us</a>
-            <a href="javascript:void(0);" class="icon" onclick="responsiveMenu()">&#9776;</a>
-        </nav>
-    </header>
 
-    <!-- Main Content Section -->
-    <main>
-        <!-- Recipe Grid Section -->
-        <section id="recipes">
-            <h1>Our Top Recipes</h1>
-            <div class="grid-container">
-                <div class="grid-item">
-                    <img src="../images/recipe1.png" alt="Recipe 1">
-                    <p>Delicious Pancakes</p>
-                </div>
-                <div class="grid-item">
-                    <img src="../images/recipe2.png" alt="Recipe 2">
-                    <p>Spaghetti Carbonara</p>
-                </div>
-                <div class="grid-item">
-                    <img src="../images/recipe3.png" alt="Recipe 3">
-                    <p>Grilled Chicken</p>
-                </div>
-            </div>
-        </section>
+  <div class="container">
+    <h1>Food Mood Quiz</h1>
 
-        <!-- News Section -->
-        <section id="news">
-            <h1>Latest News</h1>
-            <div class="news-grid">
-                <div class="news-item">
-                    <img src="../images/coli.png" alt="E.coli">
-                    <p>E.coli Outbreak in Local Produce</p>
-                </div>
-                <div class="news-item">
-                    <img src="../images/recall.png" alt="Recall">
-                    <p>Major Recall of Organic Chicken</p>
-                </div>
-            </div>
-        </section>
-    </main>
+    <!-- Question 1: What are you in the mood to eat? -->
+    <label for="food-choice">What are you in the mood to eat?</label><br>
+    <select id="food-choice">
+      <option value="Chicken">Chicken</option>
+      <option value="Pizza">Pizza</option>
+      <option value="Salad">Salad</option>
+    </select><br><br>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h1>Contact Us</h1>
-        <form>
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"><br>
+    <!-- Question 2: Healthy or fatty? -->
+    <label for="healthy-fatty">Do you want something healthy or fatty?</label><br>
+    <select id="healthy-fatty">
+      <option value="Healthy">Healthy</option>
+      <option value="Fatty">Fatty</option>
+    </select><br><br>
 
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email"><br>
+    <!-- Question 3: Are you subscribed? -->
+    <label for="subscribed">Are you subscribed?</label><br>
+    <select id="subscribed">
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select><br><br>
 
-            <label for="gender">Gender:</label><br>
-            <input type="radio" id="male" name="gender" value="male">
-            <label for="male">Male</label>
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female">Female</label><br>
+    <button onclick="generateImage()">Submit</button>
 
-            <label for="allergy">Allergy Restrictions:</label><br>
-            <input type="text" id="allergy" name="allergy" placeholder="Yes or No"><br>
+    <!-- Image Display -->
+    <div id="image-container">
+      <img id="food-image" src="" alt="Food Image" style="display:none;">
+    </div>
+  </div>
 
-            <input type="submit" value="Subscribe">
-        </form>
-    </section>
+  <script>
+    function generateImage() {
+      // Get the values of the three questions
+      const foodChoice = document.getElementById("food-choice").value;
+      const healthyFatty = document.getElementById("healthy-fatty").value;
+      const subscribed = document.getElementById("subscribed").value;
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 Kuse Kitchen. All rights reserved.</p>
-    </footer>
+      // Get the image container and the image element
+      const imageContainer = document.getElementById("image-container");
+      const foodImage = document.getElementById("food-image");
 
-    <!-- JavaScript for Responsive Menu -->
-    <script>
-        function responsiveMenu() {
-            var nav = document.getElementById("topnav");
-            if (nav.className === "topnav") {
-                nav.className += " responsive";
-            } else {
-                nav.className = "topnav";
-            }
-        }
-    </script>
+      // Default image is blank (no image)
+      let imageUrl = "";
+
+      // Use if statements to check the answers and set the image accordingly
+      if (foodChoice === "Chicken" && healthyFatty === "Fatty" && subscribed === "No") {
+        imageUrl = "https://via.placeholder.com/300x200?text=Chicken+Fatty+Not+Subscribed"; // Example image URL
+      } else if (foodChoice === "Pizza" && healthyFatty === "Fatty" && subscribed === "Yes") {
+        imageUrl = "https://via.placeholder.com/300x200?text=Pizza+Fatty+Subscribed"; // Example image URL
+      } else if (foodChoice === "Salad" && healthyFatty === "Healthy" && subscribed === "Yes") {
+        imageUrl = "https://via.placeholder.com/300x200?text=Salad+Healthy+Subscribed"; // Example image URL
+      } else {
+        imageUrl = ""; // Blank image
+      }
+
+      // Update the image source
+      foodImage.src = imageUrl;
+
+      // Show the image
+      if (imageUrl) {
+        foodImage.style.display = "block";
+      } else {
+        foodImage.style.display = "none";
+      }
+    }
+  </script>
+
 </body>
-
 </html>
