@@ -263,6 +263,31 @@
 
                     // Show the image
                     foodImage.style.display = imageUrl ? "block" : "none";
+                    function generateRandomTestimonial() {
+                const users = ["Alex", "Jordan", "Taylor", "Sam", "Morgan", "Jamie", "Casey", "Riley"];
+                const dishes = ["lasagna", "pancakes", "vegetarian chili", "chocolate cake", "grilled salmon", "quinoa salad"];
+                const adjectives = ["delicious", "easy to follow", "fantastic", "life-changing", "absolutely amazing", "perfectly detailed"];
+                const experiences = [
+                    "and it turned out great!",
+                    "and my whole family loved it!",
+                    "and it was so much easier than I expected.",
+                    "and it became my go-to recipe.",
+                    "and the step-by-step instructions were super helpful.",
+                    "and I’ve already shared it with all my friends."
+                ];
+
+                // Generate random indices
+                const user = users[Math.floor(Math.random() * users.length)];
+                const dish = dishes[Math.floor(Math.random() * dishes.length)];
+                const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+                const experience = experiences[Math.floor(Math.random() * experiences.length)];
+
+                // Combine into a testimonial
+                return `${user} says: "I followed the recipe for ${dish}, and it was ${adjective} ${experience}"`;
+            }
+
+            // Example usage
+            console.log(generateRandomTestimonial());
                 }
 
             </script>
