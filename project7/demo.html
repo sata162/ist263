@@ -203,7 +203,7 @@
 
         function generateRandomTestimonial() {
             const users = ["Alex", "Jordan", "Taylor", "Sam", "Morgan", "Jamie", "Casey", "Riley"];
-        
+            const dishes = ["recipe"];
             const adjectives = ["delicious", "easy to follow", "fantastic", "life-changing", "absolutely amazing", "perfectly detailed"];
             const experiences = [
                 "and it turned out great!",
@@ -221,7 +221,7 @@
             const experience = experiences[Math.floor(Math.random() * experiences.length)];
 
             // Combine into a testimonial
-            return `${user} says: "I followed the recipe, and it was ${adjective} ${experience}"`;
+            return `${user} says: "I followed the ${dish}, and it was ${adjective} ${experience}"`;
         }
     </script>
 
