@@ -1,111 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    
     <meta charset="UTF-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Food Mood Quiz</title>
-        <style>
+    <title>Contact Lab5</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Verdana, Geneva, Tahoma, sans-serif; 
+            background-color: #F8FFE5;
+            color: #F76900;
+        }
+        h1 {
             text-align: center;
         }
+        h2 {
+            color: #06D6A0;
 
-        .container {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            border: 2px solid #ccc;
-            border-radius: 10px;
-            background-color: #f9f9f9;
+        }
+        h3 {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #FFF;
+        }
+        nav a {
+            text-decoration: none;
+            color: #1B9AAA;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color:#f2b668;
+            color: #F76900;
+
+        }
+        nav img {
+            width: 40px;
+            height: auto;
+            border-radius: 50%;
+        }
+        nav .nav-image {
+            margin-top: 10px;
+        }
+        .news-grind{
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            flex: 2;
+        }
+        .news-items  {
+            text-align: center;
+        }
+       
+        .news-items img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0, 0.2);
+        }
+        .news-items p {
+            margin-top: 10px;
+            font-size: 14px;
+            color:#333;
+            font-weight: bold;
+        }
+        .news-links a{
+            display:block;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            text-decoration: solid;
+            color: #1B9AAA;
+            padding:16px;
+            border-bottom: 1px solid black;
+            transition: all 0.3s ease;
+        }
+        .news-links a:hover {
+            color:#F76900;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        .row1, .row2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            margin: 20px;
+        }
+        .row1 div, .row2 div {
+            flex: 1;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .grid-item {
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease; /* Smooth hover effect */
+            width: 50% ;/* Set a uniform width */
+            height: 200px;
         }
 
-        img {
-            margin-top: 20px;
-            max-width: 300px;
-            height: auto;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+        .grid-item img {
+            flex: 1;
+            width: 150px; /* Set a uniform width */
+            height: 150px; /* Set a uniform height */
+            object-fit: cover; /* Ensure the image doesn't distort */
+            border-radius: 8px; 
+            text-align: center;
+        }
+        
+        .grid-item:hover {
+            transform: scale(1.1); /* Slightly enlarge the item */
+        }
+
+        /* Clickable link styles */
+        .grid-item a {
+            text-decoration: none; /* Remove underline from links */
+            color: inherit; /* Keep text color consistent */
         }
     </style>
 </head>
-
 <body>
+    <nav>
+        <div class="nav-links">
+            <a href="final.html">Home</a> <span>|</span>
+            <a href="reci.html">Recipes</a> <span>|</span>
+            <a href="news.html">Quiz</a> <span>|</span>
+        </div>
+        <div class="nav-image">
+            <img src="../images/logo.png" alt="Kuse Kitchen logo" class="nav-images">
+        </div>
+    </nav>
 
-    <div class="container">
-        <h1>Food Mood Quiz</h1>
+    <h1>Welcome To Kuse Kitchen</h1>
+    <div class="row1">
+        <a href="reci.html" class="grid-item">
+            <img src="../images/chic.png" alt="Chicken">
+            <p>Chicken</p>
+        </a>
 
-        <!-- Question 1: What are you in the mood to eat? -->
-        <label for="food-choice">What are you in the mood to eat?</label><br>
-        <select id="food-choice">
-            <option value="Chicken">Chicken</option>
-            <option value="Pizza">Pizza</option>
-            <option value="Salad">Salad</option>
-            </select><br><br>
+        <a href="reci.html" class="grid-item">
+            <img src="../images/beef.png" alt="Beef">
+            <p>Beef</p>
+        </a>
 
-        <!-- Question 2: Healthy or fatty? -->
-        <label for="healthy-fatty">Do you want something healthy or fatty?</label><br>
-        <select id="healthy-fatty">
-            <option value="Healthy">Healthy</option>
-            <option value="Fatty">Fatty</option>
-            </select><br><br>
+        <a href="reci.html" class="grid-item">
+            <img src="../images/seafood.png" alt="Seafood">
+            <p>Seafood</p>
+        </a>
 
-        <!-- Question 3: Are you subscribed? -->
-        <label for="subscribed">Are you subscribed?</label><br>
-        <select id="subscribed">
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-            </select><br><br>
+        <a href="reci.html" class="grid-item">
+            <img src="../images/vegan.png" alt="Vegan">
+            <p>Vegan</p>
+        </a>
 
-        <button onclick="generateImage()">Submit</button>
+        <a href="reci.html" class="grid-item">
+            <img src="../images/drink.png" alt="Drinks">
+            <p>Drinks</p>
+        </a>
 
-        <!-- Image Display -->
-        <div id="image-container">
-            <img id="food-image" src="" alt="Food Image" style="display:none;">
+        <a href="reci.html" class="grid-item">
+            <img src="../images/sides.png" alt="Sides">
+            <p>Sides</p>
+         </a>
+    </div>
+
+   
+    <div>
+        <h3>News & Trending</h3>
+        <div class="row2">
+            <!-- Left side: News links -->
+            <div class="news-links">
+                <img src="../images/coli.png" alt="E.coli">>
+                <a href="https://www.cnn.com/2024/11/02/health/public-health-mcdonalds-e-coli-outbreak/index.html">McDonald's E.coli Outbreak</a>
+                <div>
+                <h3>Subscribe To Our Newsletter </h3>
+                    <form action="https://formspree.io/f/xpwzlldg" method= "POST">
+                
+                        <label for="fname">First name:</label><br>
+                        <input type="text" id="fname" name="fname" value="John"><br>
+                    
+                        <label for="lname">Last name:</label><br>
+                        <input type="text" id="lname" name="lname" value="Doe"><br>
+    
+                        <label for="meat">Allergry Restrictions:</label><br>
+                        <input type="text" id="meat" name="meat" value="Yes or No"><br>
+    
+                        <label for="meat">Do You Eat Meat?</label><br>
+                        <input type="text" id="meat" name="meat" value="Yes or No"><br>
+    
+    
+                        <label for="sex">Sex:</label><br>    
+                        <input type="radio" id="Male1" name="Gender" value="Male">
+                        <label for="Male1">Male</label><br>
+                    
+                        <input type="radio" id="Female" name="Gender" value="Female">
+                        <label for="Female">Female</label><br>
+                    
+                        <input type="radio" id="None" name="Gender" value="None">
+                        <label for="None">Non-Binary</label><br>
+    
+                        <label for="Subscription"> Preffered Method of Communication?</label><br>    
+                        <input type="radio" id="meat" name="response" value="Yes">
+                        <label for="meat">Text Messages</label><br>
+                    
+                        <input type="radio" id="meat" name="response" value="No">
+                        <label for="meat">Email Address: </label><br>
+                    
+                        <label for="Email"> Email Address: </Address></label><br>
+                        <textarea id="Email" name="Email" rows= "3" cols= "50"></textarea><br>
+                    
+                        <input type="submit" value="Submit" onclick="Submitted" >
+    
+                        <form id="userTest">
+                    </form>
+                </div>  
+            </div>
+         
+            <!-- Right side: News grid -->
+            <div class="news-grid">
+                <div class="news-item">
+                    <img src="../images/ben.png" alt="Ben & Jerry’s ">
+                    <a href="https://apnews.com/article/ben-jerrys-ice-cream-gaza-unilever-palestinian-8d3d0a378b3f597de0f41b69ca61f339">Ben & Jerry’s sues Unilever</a>
+                </div>
+                <div class="news-item">
+                    <img src="../images/noodle.jpg" alt="Noodle shop">
+                    <a href="https://nypost.com/2024/12/12/lifestyle/nyc-noodle-spot-named-best-chinese-restaurant-in-us-for-2024/">NYC noodle shop named best Chinese restaurant in the US for 2024: I just want to scream right now</a>
+                </div>
+                <div class="news-item">
+                    <img src="../images/oil.jpeg" alt="News 3">
+                    <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.foodnavigator.com/Article/2024/10/16/When-will-the-price-of-olive-oil-come-down/&ved=2ahUKEwjr7sui0KWKAxXIlYkEHaSgC80QFnoECA4QAQ&usg=AOvVaw0h3pMlfsvUmXZ93ZZJUgIc">Olive oil prices drop significantly</a>
+                </div>
+                <div class="news-item">
+                    <img src="../images/panda.jpg" alt="News 4">
+                    <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.pasadenanow.com/weekendr/revamped-panda-inn-re-arrives-in-spectacular-fashion/&ved=2ahUKEwj9wr3izqWKAxWyAHkGHV5CF8gQFnoECDYQAQ&usg=AOvVaw1_fQtLBjkq5RDknwY-LVov">Panda Inn revamped in style</a>
+                </div>
+                <div class="news-item"></div>
+                    <img src="../images/icecream.png" alt="News 5">
+                    <a href="https://www.today.com/food/news/baskin-robbins-cheese-flavored-ice-cream-rcna178374">Baskin-Robbin's latest cheeseboard-inspired ice cream flavor</a>
+               div class="news-links">
+                <img src="../images/coli.png" alt="E.coli">>
+                <a href="https://www.cnn.com/2024/11/02/health/public-health-mcdonalds-e-coli-outbreak/index.html">McDonald's E.coli Outbreak</a>
+            </div>
+            <!-- Right side: News grid -->
+            <div class="news-grid">
+                <div class="news-item">
+                    <img src="../images/ben.png" alt="Ben & Jerry’s ">
+                    <a href="https://apnews.com/article/ben-jerrys-ice-cream-gaza-unilever-palestinian-8d3d0a378b3f597de0f41b69ca61f339">Ben & Jerry’s sues Unilever</a>
+                    <div class="news-links">
+                        <img src="../images/ben.png" alt="Ben & Jerry’s ">
+                        <a href="https://apnews.com/article/ben-jerrys-ice-cream-gaza-unilever-palestinian-8d3d0a378b3f597de0f41b69ca61f339">Ben & Jerry’s sues Unilever</a>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="../images/noodle.jpg" alt="Noodle shop">
+                    <a href="https://nypost.com/2024/12/12/lifestyle/nyc-noodle-spot-named-best-chinese-restaurant-in-us-for-2024/">NYC noodle shop named best Chinese restaurant in the US for 2024: I just want to scream right now</a>
+                </div>
+                <div class="news-item">
+                    <img src="../images/oil.jpeg" alt="News 3">
+                    <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.foodnavigator.com/Article/2024/10/16/When-will-the-price-of-olive-oil-come-down/&ved=2ahUKEwjr7sui0KWKAxXIlYkEHaSgC80QFnoECA4QAQ&usg=AOvVaw0h3pMlfsvUmXZ93ZZJUgIc">Olive oil prices drop significantly</a>
+                </div>
+                <div class="news-item">
+                    <img src="../images/panda.jpg" alt="News 4">
+                    <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.pasadenanow.com/weekendr/revamped-panda-inn-re-arrives-in-spectacular-fashion/&ved=2ahUKEwj9wr3izqWKAxWyAHkGHV5CF8gQFnoECDYQAQ&usg=AOvVaw1_fQtLBjkq5RDknwY-LVov">Panda Inn revamped in style</a>
+                </div>
+                <div class="news-item"></div>
+                    <img src="../images/icecream.png" alt="News 5">
+                    <a href="https://www.today.com/food/news/baskin-robbins-cheese-flavored-ice-cream-rcna178374">Baskin-Robbin's latest cheeseboard-inspired ice cream flavor</a>
+                </div>
             </div>
         </div>
-
     
-    <script>
-        function generateImage() {
-            // Get the values of the three questions
-            const foodChoice = document.getElementById("food-choice").value;
-            const healthyFatty = document.getElementById("healthy-fatty").value;
-            const subscribed = document.getElementById("subscribed").value;
+    <footer>
+        <p>&copy; 2024 Kuse Kitchen. All rights reserved.</p>
+    </footer>
 
-            // Get the image container and the image element
-            const imageContainer = document.getElementById("image-container");
-            const foodImage = document.getElementById("food-image");
-
-            // Default image is blank (no image)
-            let imageUrl = "";
-
-            // Use if statements to check the answers and set the image accordingly
-            if (foodChoice === "Chicken" && healthyFatty === "Fatty" && subscribed === "No") {
-                imageUrl = "https://via.placeholder.com/300x200?text=Chicken+Fatty+Not+Subscribed"; // Example image URL
-            } else if (foodChoice === "Pizza" && healthyFatty === "Fatty" && subscribed === "Yes") {
-                imageUrl = "https://via.placeholder.com/300x200?text=Pizza+Fatty+Subscribed"; // Example image URL
-            } else if (foodChoice === "Salad" && healthyFatty === "Healthy" && subscribed === "Yes") {
-                imageUrl = "https://via.placeholder.com/300x200?text=Salad+Healthy+Subscribed"; // Example image URL
-            } else {
-                imageUrl = ""; // Blank image
-            }
-
-            // Update the image source
-            foodImage.src = imageUrl;
-
-            // Show the image
-            if (imageUrl) {
-                foodImage.style.display = "block";
-            } else {
-                foodImage.style.display = "none";
-            }
-        }
-    </script>
-
-</body>
-
-</html>
+ <body>
+ </html>
